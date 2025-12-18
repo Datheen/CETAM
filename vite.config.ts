@@ -4,6 +4,6 @@ import react from "@vitejs/plugin-react";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/Projeto-CETAM/",
+  base: "/CETAM/",
   plugins: [tailwindcss(), react()],
 });
