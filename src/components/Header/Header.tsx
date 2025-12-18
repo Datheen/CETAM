@@ -31,7 +31,7 @@ function Header() {
       <header className={styles.header}>
         <span>
           <img
-            src="/src/assets/img/logo-w.webp"
+            src="img/logo-w.webp"
             alt="Logotipo da Empresa"
             className={styles.logo}
           />
@@ -51,7 +51,7 @@ function Header() {
         </a>
         <img
           className="w-6 mb-[]"
-          src="/src/assets/img/whatsapp.webp"
+          src="img/whatsapp.webp"
           alt="Whatsapp Icon"
         />
       </div>

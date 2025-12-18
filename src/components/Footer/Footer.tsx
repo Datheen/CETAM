@@ -15,7 +15,7 @@ function Footer() {
         O Encanto Amazônico é uma das maiores lojas de paisagismo e jardinagem
         de Manaus – Amazonas.
       </p>
-      <img className="w-40 mt-5" src="/src/assets/img/logo-footer.webp"/>
+      <img className="w-40 mt-5" src="img/logo-footer.webp"/>
     </div>
 
     

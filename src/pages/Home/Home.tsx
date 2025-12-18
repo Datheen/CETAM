@@ -73,7 +73,7 @@ function Home() {
           <img className={styles.heroImagem} src={planta} />
           <img
             className={styles.vtImagem}
-            src="/src/assets/img/vt.webp"
+            src="img/vt.webp"
             alt="Vitória Régia"
           />
         </div>

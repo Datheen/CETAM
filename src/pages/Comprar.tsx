@@ -77,7 +77,7 @@ function Comprar() {
                       className="flex justify-start items-center gap-2"
                     >
                       <div className="flex justify-start items-center">
-                        <img src="/src/assets/img/Produtos/Comprar/Rating.png" />
+                        <img src="img/Produtos/Comprar/Rating.png" />
                       </div>
                     </div>
                     <div className="justify-start text-Text-Secondary text-2xl font-medium font-['Poppins'] leading-7">
@@ -154,21 +154,21 @@ function Comprar() {
                       <div id="icones">
                         <img
                           className="w-10"
-                          src="/src/assets/img/Produtos/Conditions/chuva.webp"
+                          src="img/Produtos/Conditions/chuva.webp"
                         />
                       </div>
 
                       <img
                         className="w-10"
-                        src="/src/assets/img/Produtos/Conditions/sol.webp"
+                        src="img/Produtos/Conditions/sol.webp"
                       />
                       <img
                         className="w-10"
-                        src="/src/assets/img/Produtos/Conditions/neve.webp"
+                        src="img/Produtos/Conditions/neve.webp"
                       />
                       <img
                         className="w-10"
-                        src="/src/assets/img/Produtos/Conditions/temp.webp"
+                        src="img/Produtos/Conditions/temp.webp"
                       />
                     </div>
                   </div>
@@ -187,7 +187,7 @@ function Comprar() {
                       className="w-64 px-5 py-2.5 left-0 top-0 absolute bg-Brand-Primary inline-flex justify-center items-center gap-2"
                     >
                       <div className="w-6 h-6 relative overflow-hidden">
-                        <img src="/src/assets/img/Produtos/Comprar/Buy.png" />
+                        <img src="img/Produtos/Comprar/Buy.png" />
                       </div>
                       <div className="justify-start mt-0.5 text-white text-base font-semibold font-['Poppins'] leading-6">
                         Comprar
@@ -224,9 +224,9 @@ function Comprar() {
                   </div>
                   <div className="self-stretch inline-flex justify-start items-center gap-2">
                     <div className="flex justify-start items-center gap-9">
-                      <img src="/src/assets/img/Produtos/Pagamentos/pix.webp" />
-                      <img src="/src/assets/img/Produtos/Pagamentos/card.webp" />
-                      <img src="/src/assets/img/Produtos/Pagamentos/boleto.webp" />
+                      <img src="img/Produtos/Pagamentos/pix.webp" />
+                      <img src="img/Produtos/Pagamentos/card.webp" />
+                      <img src="img/Produtos/Pagamentos/boleto.webp" />
                     </div>
                     <div
                       data-color="Inherit"

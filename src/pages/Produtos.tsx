@@ -134,7 +134,7 @@ function Produtos() {
                 Compre a planta dos seus sonhos!
               </div>
               <div className="inline-flex justify-start items-center gap-12">
-                <img className="w-50" src="/src/assets/img/logo-w -alt.png" />
+                <img className="w-50" src="img/logo-w -alt.png" />
               </div>
             </div>
             <div className="w-96 h-16 relative bg-white rounded-xl overflow-hidden">
@@ -148,7 +148,7 @@ function Produtos() {
           <div className="w-96 ml-30 h-96 left-[726px] top-[123px] absolute bg-stone-800 rounded-tl-[200px] rounded-tr-[200px] rounded-bl-[200px]" />
           <img
             className="ml-217 top-[-52px] relative z-10"
-            src="/src/assets/img/Produtos/banner.webp"
+            src="img/Produtos/banner.webp"
           />
           <div className="w-28 h-44 left-[638px] top-[359.19px] absolute origin-top-left rotate-[-53.14deg]  outline-4 -outline-offset-2 outline-green-800" />
           <div className="w-28 h-36 left-[1227px] top-[13px] absolute origin-top-left rotate-[18.13deg]  outline-[5px] outline-offset-[-2.50px] outline-green-800" />
@@ -160,7 +160,7 @@ function Produtos() {
               <img
                 id="goto-orquideas"
                 className="cursor-pointer hover:scale-120 translate-y-11 transition-all duration-700 ease-out mostrar self-stretch h-44 w-[178px] shadow-[0px_8px_23px_0px_rgba(80,107,82,0.16)] rounded-full"
-                src="/src/assets/img/Produtos/Ball/ball1.jpeg"
+                src="img/Produtos/Ball/ball1.jpeg"
               />
               <div className="mostrar translate-y-11 duration-700 ease-out transition-all opacity-0 self-stretch text-center justify-start text-green-900 text-base font-bold font-['Poppins'] uppercase tracking-[3.20px]">
                 Orquideas
@@ -169,7 +169,7 @@ function Produtos() {
             <div className="flex-1 h-56 inline-flex flex-col justify-center items-center gap-6">
               <img
                 className="cursor-pointer translate-y-11 hover:scale-120 transition-all w-[178px] duration-700 ease-out mostrar self-stretch h-44 rounded-[125px] shadow-[0px_8px_23px_0px_rgba(80,107,82,0.16)]"
-                src="/src/assets/img/Produtos/Ball/ball2.jpg"
+                src="img/Produtos/Ball/ball2.jpg"
               />
               <div className="mostrar translate-y-11 duration-700 ease-out transition-all opacity-0 self-stretch text-center justify-start text-green-900 text-base font-bold font-['Poppins'] uppercase tracking-[3.20px]">
                 Samambaias
@@ -178,7 +178,7 @@ function Produtos() {
             <div className="flex-1 h-56 inline-flex flex-col justify-center items-center gap-6">
               <img
                 className="w-[178px] cursor-pointer hover:scale-120 translate-y-11 transition-all duration-700 ease-out mostrar self-stretch h-44 rounded-[125px] shadow-[0px_8px_23px_0px_rgba(80,107,82,0.16)]"
-                src="/src/assets/img/Produtos/Ball/ball3.webp"
+                src="img/Produtos/Ball/ball3.webp"
               />
               <div className=" mostrar translate-y-11 duration-700 ease-out transition-all opacity-0 self-stretch text-center justify-start text-green-900 text-base font-bold font-['Poppins'] uppercase tracking-[3.20px]">
                 Bromélias
@@ -187,7 +187,7 @@ function Produtos() {
             <div className="flex-1 h-56 inline-flex flex-col justify-center items-center gap-6">
               <img
                 className="w-[178px] cursor-pointer hover:scale-120 translate-y-11 transition-all duration-700 ease-out mostrar self-stretch h-44 rounded-[125px] shadow-[0px_8px_23px_0px_rgba(80,107,82,0.16)]"
-                src="/src/assets/img/Produtos/Ball/ball4.jpg"
+                src="img/Produtos/Ball/ball4.jpg"
               />
               <div className="mostrar translate-y-11 duration-700 ease-out transition-all opacity-0 self-stretch text-center justify-start text-green-900 text-base font-bold font-['Poppins'] uppercase tracking-[3.20px]">
                 Suculentas
@@ -196,7 +196,7 @@ function Produtos() {
             <div className="flex-1 h-56 inline-flex flex-col justify-center items-center gap-6">
               <img
                 className="cursor-pointer hover:scale-120 translate-y-11 transition-all duration-700 ease-out mostrar self-stretch h-44 rounded-[125px] shadow-[0px_8px_23px_0px_rgba(80,107,82,0.16)]"
-                src="/src/assets/img/Produtos/Ball/ball5.jpg"
+                src="img/Produtos/Ball/ball5.jpg"
               />
               <div className="mostrar translate-y-11 duration-700 ease-out transition-all opacity-0 self-stretch text-center justify-start text-green-900 text-base font-bold font-['Poppins'] uppercase tracking-[3.20px]">
                 Begônias
@@ -205,7 +205,7 @@ function Produtos() {
             <div className="flex-1 h-56 inline-flex flex-col justify-center items-center gap-6">
               <img
                 className="w-[178px] cursor-pointer hover:scale-120 translate-y-11 transition-all duration-700 ease-out mostrar self-stretch h-44 rounded-[125px] shadow-[0px_8px_23px_0px_rgba(80,107,82,0.16)]"
-                src="/src/assets/img/Produtos/Ball/ball6.jpg"
+                src="img/Produtos/Ball/ball6.jpg"
               />
               <div className="mostrar translate-y-11 duration-700 ease-out transition-all opacity-0 self-stretch text-center justify-start text-green-900 text-base font-bold font-['Poppins'] uppercase tracking-[3.20px]">
                 Alocasias
@@ -236,7 +236,7 @@ function Produtos() {
               <div className="self-stretch flex-1 p-2 bg-white  inline-flex justify-center items-center gap-2.5">
                 <div className="flex-1 self-stretch text-center justify-center text-green-800 text-1xl font-semibold font-['Poppins'] uppercase tracking-[4.80px] [text-shadow:_0px_4px_4px_rgb(52_52_52_/_0.25)]poppins">
                   Cabará
-                  <img src="/src/assets/img/Produtos/Trending/cabará.webp" />
+                  <img src="img/Produtos/Trending/cabará.webp" />
                 </div>
               </div>
               <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch rounded-full h-16 p-2 bg-white shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
@@ -252,7 +252,7 @@ function Produtos() {
               <div className=" self-stretch flex-1 p-2 bg-white  inline-flex justify-center items-center gap-2.5">
                 <div className="flex-1 self-stretch text-center justify-center text-green-800 text-1xl font-semibold font-['Poppins'] uppercase tracking-[4.80px] [text-shadow:0px_4px_4px_rgb(52_52_52/0.25)]">
                   Caladium
-                  <img src="/src/assets/img/Produtos/Trending/tironhão.webp" />
+                  <img src="img/Produtos/Trending/tironhão.webp" />
                 </div>
               </div>
               <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch rounded-full h-16 p-2 bg-white shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
@@ -268,7 +268,7 @@ function Produtos() {
               <div className="self-stretch flex-1 p-2 bg-white  inline-flex justify-center items-center gap-2.5">
                 <div className="flex-1 self-stretch text-center justify-center text-green-800 text-1xl font-semibold font-['Poppins'] uppercase tracking-[4.80px] [text-shadow:0px_4px_4px_rgb(52_52_52/0.25)]">
                   Rosa do deserto
-                  <img src="/src/assets/img/Produtos/Trending/rosa-do-deserto.webp" />
+                  <img src="img/Produtos/Trending/rosa-do-deserto.webp" />
                 </div>
               </div>
               <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch rounded-full h-16 p-2 bg-white shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
@@ -297,7 +297,7 @@ function Produtos() {
                 className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
               >
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="/src/assets/img/Produtos/Categorias/Alocacias/Alocasia - Cuprea.webp" />
+                <img src="img/Produtos/Categorias/Alocacias/Alocasia - Cuprea.webp" />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
                     Cuprea
@@ -319,7 +319,7 @@ function Produtos() {
                 className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
               >
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="/src/assets/img/Produtos/Categorias/Alocacias/Alocasia - Odora.jpg" />
+                <img src="img/Produtos/Categorias/Alocacias/Alocasia - Odora.jpg" />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
                     Odora
@@ -341,7 +341,7 @@ function Produtos() {
                 className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
               >
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="/src/assets/img/Produtos/Categorias/Alocacias/Alocasia - Polly.jpeg" />
+                <img src="img/Produtos/Categorias/Alocacias/Alocasia - Polly.jpeg" />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
                     Polly
@@ -363,7 +363,7 @@ function Produtos() {
                 className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
               >
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="/src/assets/img/Produtos/Categorias/Alocacias/Alocasia Clypeolata.webp" />
+                <img src="img/Produtos/Categorias/Alocacias/Alocasia Clypeolata.webp" />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
                     Clypeolata
@@ -393,7 +393,7 @@ function Produtos() {
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
                 <img
                   className="w-[230px] ml-12 mb-2"
-                  src="/src/assets/img/Produtos/Categorias/Alocacias/Alocasia - Black Velvet.webp"
+                  src="img/Produtos/Categorias/Alocacias/Alocasia - Black Velvet.webp"
                 />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
@@ -418,7 +418,7 @@ function Produtos() {
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
                 <img
                   className="w-[285px] ml-5 mb-4"
-                  src="/src/assets/img/Produtos/Categorias/Alocacias/Alocasia - Dragon Scale.webp"
+                  src="img/Produtos/Categorias/Alocacias/Alocasia - Dragon Scale.webp"
                 />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
@@ -443,7 +443,7 @@ function Produtos() {
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
                 <img
                   className="w-[280px] ml-5"
-                  src="/src/assets/img/Produtos/Categorias/Alocacias/Alocasia - Zebrina.webp"
+                  src="img/Produtos/Categorias/Alocacias/Alocasia - Zebrina.webp"
                 />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
@@ -468,7 +468,7 @@ function Produtos() {
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
                 <img
                   className="w-[245px] ml-10"
-                  src="/src/assets/img/Produtos/Categorias/Alocacias/Alocasia -Sinuata.webp"
+                  src="img/Produtos/Categorias/Alocacias/Alocasia -Sinuata.webp"
                 />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
@@ -507,7 +507,7 @@ function Produtos() {
                 className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
               >
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="/src/assets/img/Produtos/Categorias/Bromelias/Bromelias - Aechmea chantinii.webp" />
+                <img src="img/Produtos/Categorias/Bromelias/Bromelias - Aechmea chantinii.webp" />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
                     Aechmea chantinii
@@ -529,7 +529,7 @@ function Produtos() {
                 className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
               >
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="/src/assets/img/Produtos/Categorias/Bromelias/Bromelias - Guzmania.webp" />
+                <img src="img/Produtos/Categorias/Bromelias/Bromelias - Guzmania.webp" />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
                     Guzmania
@@ -551,7 +551,7 @@ function Produtos() {
                 className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
               >
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="/src/assets/img/Produtos/Categorias/Bromelias/Bromelias - Aechmea.jpg" />
+                <img src="img/Produtos/Categorias/Bromelias/Bromelias - Aechmea.jpg" />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
                     Aechmea
@@ -573,7 +573,7 @@ function Produtos() {
                 className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
               >
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="/src/assets/img/Produtos/Categorias/Bromelias/Bromelias - Tillandsia.webp" />
+                <img src="img/Produtos/Categorias/Bromelias/Bromelias - Tillandsia.webp" />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
                     Tillandsia
@@ -611,7 +611,7 @@ function Produtos() {
                 className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
               >
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="/src/assets/img/Produtos/Categorias/Suculentas/Suculenta - Gasteria Maculata.jpg" />
+                <img src="img/Produtos/Categorias/Suculentas/Suculenta - Gasteria Maculata.jpg" />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
                     Gasteria Maculata
@@ -635,7 +635,7 @@ function Produtos() {
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
                 <img
                   className="w-[260px] ml-8 mb-7"
-                  src="/src/assets/img/Produtos/Categorias/Suculentas/Suculentas - Aeonium.jpg"
+                  src="img/Produtos/Categorias/Suculentas/Suculentas - Aeonium.jpg"
                 />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
@@ -658,7 +658,7 @@ function Produtos() {
                 className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
               >
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="/src/assets/img/Produtos/Categorias/Suculentas/Suculentas - Echeveria Agavoides.jpg" />
+                <img src="img/Produtos/Categorias/Suculentas/Suculentas - Echeveria Agavoides.jpg" />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
                     Echeveria Agavoides
@@ -680,7 +680,7 @@ function Produtos() {
                 className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
               >
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="/src/assets/img/Produtos/Categorias/Suculentas/Suculentas - Echeveria.jpg" />
+                <img src="img/Produtos/Categorias/Suculentas/Suculentas - Echeveria.jpg" />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
                     Echeveria
@@ -720,7 +720,7 @@ function Produtos() {
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
                 <img
                   className="ml-12 w-[230px]"
-                  src="/src/assets/img/Produtos/Categorias/Orquideas/Orquideas - Chomthong.webp"
+                  src="img/Produtos/Categorias/Orquideas/Orquideas - Chomthong.webp"
                 />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
@@ -745,7 +745,7 @@ function Produtos() {
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
                 <img
                   className="w-[235px] ml-10"
-                  src="/src/assets/img/Produtos/Categorias/Orquideas/Orquideas - Looge Tone Red.webp"
+                  src="img/Produtos/Categorias/Orquideas/Orquideas - Looge Tone Red.webp"
                 />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
@@ -770,7 +770,7 @@ function Produtos() {
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
                 <img
                   className="w-[238px] ml-10"
-                  src="/src/assets/img/Produtos/Categorias/Orquideas/Orquideas - Phalaenopsis Manchada.jpg"
+                  src="img/Produtos/Categorias/Orquideas/Orquideas - Phalaenopsis Manchada.jpg"
                 />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
@@ -795,7 +795,7 @@ function Produtos() {
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
                 <img
                   className="w-[236px] ml-10 mb-1"
-                  src="/src/assets/img/Produtos/Categorias/Orquideas/Orquideas - Sophoronitis.webp"
+                  src="img/Produtos/Categorias/Orquideas/Orquideas - Sophoronitis.webp"
                 />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
@@ -824,7 +824,7 @@ function Produtos() {
                 className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
               >
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="/src/assets/img/Produtos/Categorias/Orquideas/Orquidea - Alpino.webp" />
+                <img src="img/Produtos/Categorias/Orquideas/Orquidea - Alpino.webp" />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
                     Alpino
@@ -846,7 +846,7 @@ function Produtos() {
                 className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
               >
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="/src/assets/img/Produtos/Categorias/Orquideas/Orquidea - Blanca Phalaenopsis.webp" />
+                <img src="img/Produtos/Categorias/Orquideas/Orquidea - Blanca Phalaenopsis.webp" />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
                     Blanca Phalaenopsis
@@ -868,7 +868,7 @@ function Produtos() {
                 className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
               >
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="/src/assets/img/Produtos/Categorias/Orquideas/Orquidea - Cascatas.webp" />
+                <img src="img/Produtos/Categorias/Orquideas/Orquidea - Cascatas.webp" />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
                     Cascatas
@@ -890,7 +890,7 @@ function Produtos() {
                 className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
               >
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="/src/assets/img/Produtos/Categorias/Orquideas/Orquidea - Phalaenopsis.webp" />
+                <img src="img/Produtos/Categorias/Orquideas/Orquidea - Phalaenopsis.webp" />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
                     Phalaenopsis
@@ -928,7 +928,7 @@ function Produtos() {
                 className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
               >
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="/src/assets/img/Produtos/Categorias/Alocacias/Alocasia - Cuprea.webp" />
+                <img src="img/Produtos/Categorias/Alocacias/Alocasia - Cuprea.webp" />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
                     Cuprea
@@ -950,7 +950,7 @@ function Produtos() {
                 className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
               >
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="/src/assets/img/Produtos/Categorias/Alocacias/Alocasia - Odora.jpg" />
+                <img src="img/Produtos/Categorias/Alocacias/Alocasia - Odora.jpg" />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
                     Odora
@@ -972,7 +972,7 @@ function Produtos() {
                 className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
               >
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="/src/assets/img/Produtos/Categorias/Alocacias/Alocasia - Polly.jpeg" />
+                <img src="img/Produtos/Categorias/Alocacias/Alocasia - Polly.jpeg" />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
                     Polly
@@ -994,7 +994,7 @@ function Produtos() {
                 className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
               >
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="/src/assets/img/Produtos/Categorias/Alocacias/Alocasia Clypeolata.png" />
+                <img src="img/Produtos/Categorias/Alocacias/Alocasia Clypeolata.png" />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
                     Clypeolata
@@ -1032,7 +1032,7 @@ function Produtos() {
                 className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
               >
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="/src/assets/img/Produtos/Categorias/Samambaias/Samambaias - Americana.webp" />
+                <img src="img/Produtos/Categorias/Samambaias/Samambaias - Americana.webp" />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
                     Americana
@@ -1054,7 +1054,7 @@ function Produtos() {
                 className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
               >
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="/src/assets/img/Produtos/Categorias/Samambaias/Samambaias - De Sol.webp" />
+                <img src="img/Produtos/Categorias/Samambaias/Samambaias - De Sol.webp" />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
                     De Sol
@@ -1076,7 +1076,7 @@ function Produtos() {
                 className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
               >
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="/src/assets/img/Produtos/Categorias/Samambaias/Samambaias - Gleichenia.webp" />
+                <img src="img/Produtos/Categorias/Samambaias/Samambaias - Gleichenia.webp" />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
                     Gleichenia
@@ -1098,7 +1098,7 @@ function Produtos() {
                 className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
               >
                 <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="/src/assets/img/Produtos/Categorias/Samambaias/Samambaias - Prata.webp" />
+                <img src="img/Produtos/Categorias/Samambaias/Samambaias - Prata.webp" />
                 <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
                   <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
                     Prata
@@ -1157,7 +1157,7 @@ function Produtos() {
           </div>
           <img
             className="flex-1 self-stretch rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] border border-green-700"
-            src="/src/assets/img/Galeria/Section.webp"
+            src="img/Galeria/Section.webp"
           />
         </div>
         <div
@@ -1176,7 +1176,7 @@ function Produtos() {
                 <img
                   id="japa"
                   className="absolute inset-0 w-full h-full object-cover"
-                  src="/src/assets/img/Galeria/1.webp"
+                  src="img/Galeria/1.webp"
                 />
                 <div className="relative z-10 p-4 flex justify-start items-end">
                   <div className="flex-1 justify-start text-white text-base font-normal font-['Poppins'] opacity-0">
@@ -1189,7 +1189,7 @@ function Produtos() {
                 <img
                   id="japa"
                   className="absolute inset-0 w-full h-full object-cover"
-                  src="/src/assets/img/Galeria/2.webp"
+                  src="img/Galeria/2.webp"
                 />
                 <div className="relative z-10 p-4 flex justify-start items-end">
                   <div className="flex-1 justify-start text-white text-base font-normal font-['Poppins'] opacity-0">
@@ -1202,7 +1202,7 @@ function Produtos() {
                 <img
                   id="japa"
                   className="absolute inset-0 w-full h-full object-cover"
-                  src="/src/assets/img/Galeria/3.webp"
+                  src="img/Galeria/3.webp"
                 />
                 <div className="relative z-10 p-4 flex justify-start items-end">
                   <div className="flex-1 justify-start text-white text-base font-normal font-['Poppins'] opacity-0">
@@ -1215,7 +1215,7 @@ function Produtos() {
                 <img
                   id="japa"
                   className="absolute inset-0 w-full h-full object-cover"
-                  src="/src/assets/img/Galeria/4.webp"
+                  src="img/Galeria/4.webp"
                 />
                 <div className="relative z-10 p-4 flex justify-start items-end">
                   <div className="flex-1 justify-start text-white text-base font-normal font-['Poppins'] opacity-0">
@@ -1229,7 +1229,7 @@ function Produtos() {
                 <img
                   id="japa"
                   className="absolute inset-0 w-full h-full object-cover"
-                  src="/src/assets/img/Galeria/5.webp"
+                  src="img/Galeria/5.webp"
                 />
                 <div className="relative z-10 p-4 flex justify-start items-end">
                   <div className="flex-1 justify-start text-white text-base font-normal font-['Poppins'] opacity-0">
@@ -1242,7 +1242,7 @@ function Produtos() {
                 <img
                   id="japa"
                   className="absolute inset-0 w-full h-full object-cover"
-                  src="/src/assets/img/Galeria/6.webp"
+                  src="img/Galeria/6.webp"
                 />
                 <div className="relative z-10 p-4 flex justify-start items-end">
                   <div className="flex-1 justify-start text-white text-base font-normal font-['Poppins'] opacity-0">
@@ -1255,7 +1255,7 @@ function Produtos() {
                 <img
                   id="japa"
                   className="absolute inset-0 w-full h-full object-cover"
-                  src="/src/assets/img/Galeria/7.webp"
+                  src="img/Galeria/7.webp"
                 />
                 <div className="relative z-10 p-4 flex justify-start items-end">
                   <div className="flex-1 justify-start text-white text-base font-normal font-['Poppins'] opacity-0">
