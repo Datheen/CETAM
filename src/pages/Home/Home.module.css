@@ -1,0 +1,385 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #e8f3df;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
+  padding-left: 142px;
+  left: 100px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 24px;
+  position: relative;
+  max-width: 776px;
+  scale: 1.1;
+}
+
+.heroEsquerda {
+  padding-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 56px;
+}
+
+.barras {
+  padding-top: 8px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.barra {
+  width: 16px;
+  background-color: #166534;
+}
+
+.barraAlta {
+  height: 96px;
+}
+
+.barraBaixa {
+  height: 48px;
+  opacity: 0.1;
+}
+
+.conteudo {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.caixaIcone {
+  width: 96px;
+  height: 96px;
+  position: relative;
+  overflow: hidden;
+}
+
+.secaoTexto {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+.grupoTitulo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.titulo {
+  width: 612px;
+  justify-content: flex-start;
+  font-size: 72px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+  line-height: 93.6px;
+  background: linear-gradient(to right, #22c55e, #14532d, #dcfce7);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  z-index: 2;
+  background-size: 200% 200%;
+  animation: wave 6s ease-in-out infinite;
+  margin-top: 80px;
+  margin-left: 40px;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.subtitulo {
+  z-index: 2;
+  width: 483px;
+  justify-content: flex-start;
+  color: #525252;
+  font-size: 19px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  line-height: 24px;
+  margin-left: 40px;
+}
+
+.botoes {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 32px;
+  margin-left: 40px;
+}
+
+.botaoPrimario {
+  width: 190px;
+  height: 56px;
+  padding: 16px 40px;
+  background-color: #166534;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.botaoPrimario:hover {
+  background-color: #52525b;
+}
+
+.botaoPrimarioTexto {
+  justify-content: flex-start;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  line-height: 24px;
+}
+
+.botaoSecundario {
+  height: 56px;
+  padding: 16px 40px;
+  background-color: #e7e5e4;
+  outline: 2px solid #166534;
+  outline-offset: -2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.botaoSecundario:hover {
+  background-color: #fef3c7;
+}
+
+.botaoSecundarioTexto {
+  justify-content: flex-start;
+  color: #166534;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  line-height: 24px;
+  z-index: 2;
+}
+
+.heroImagem {
+  scale: 1.1;
+  position: absolute;
+  right: -800px;
+  bottom: -190px;
+  z-index: 2;
+}
+
+.vtImagem {
+  width: 300px;
+  position: absolute;
+  right: -760px;
+  bottom: -340px;
+  z-index: 10;
+}
+
+.padraoContainer {
+  display: flex;
+  position: relative;
+  opacity: 0.2;
+  margin-left: 10%;
+  top: -160px;
+  right: -415px;
+  scale: 0.6;
+  z-index: -1;
+}
+
+.padraoImagem {
+  scale: 1.6;
+  position: absolute;
+  margin-top: -900px;
+  margin-left: 25%;
+}
+
+.cardGrande {
+  width: 1920px;
+  position: absolute;
+  height: 900px;
+  background-color: #166534;
+  z-index: -10;
+  position: relative;
+  padding-left: 160px;
+  margin-top: 140px;
+}
+
+.sobreposicaoTopo {
+  position: absolute;
+  width: 288px;
+  height: 128px;
+  mix-blend-mode: multiply;
+  background-color: #166534;
+  top: 120px;
+  left: 140px;
+}
+
+.sobreposicaoBase {
+  position: absolute;
+  width: 288px;
+  height: 128px;
+  mix-blend-mode: multiply;
+  background-color: #166534;
+  bottom: 80px;
+  left: 410px;
+}
+
+.numero200 {
+  position: absolute;
+  font-weight: 700;
+  color: white;
+  top: 122px;
+  left: 215px;
+  font-size: 60px;
+}
+
+.texto200 {
+  position: absolute;
+  font-weight: 700;
+  color: white;
+  top: 200px;
+  left: 178px;
+  font-size: 19px;
+}
+
+.numero100 {
+  position: absolute;
+  font-weight: 700;
+  color: white;
+  bottom: 116px;
+  left: 480px;
+  font-size: 60px;
+}
+
+.texto100 {
+  position: absolute;
+  font-weight: 700;
+  color: white;
+  bottom: 97px;
+  left: 460px;
+  font-size: 19px;
+}
+
+.cardImagem {
+  padding: 80px;
+  padding-top: 200px;
+  z-index: 2;
+}
+
+.secaoFlutuante {
+  /*Isso aqui eu vou mudar depois dependendo do tamanho do Header*/
+  position: relative;
+  scale: 0.9;
+  padding-top: 160px;
+  padding-bottom: 160px;
+  top: -785px;
+  right: -800px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
+  z-index: 10;
+}
+
+.secaoBadge {
+  padding-left: 16px;
+  border-left: 6px solid #bbf7d0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.secaoBadgeTexto {
+  justify-content: flex-start;
+  color: #bbf7d0;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  line-height: 24px;
+}
+
+.secaoTitulo {
+  width: 860px;
+  justify-content: flex-start;
+  color: white;
+  font-size: 36px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+  line-height: 14px;
+}
+
+.secaoSubtitulo {
+  width: 483px;
+  justify-content: flex-start;
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  line-height: 24px;
+}
+
+.itemDestaque {
+  display: flex;
+  width: 760px;
+  gap: 12px;
+  justify-content: flex-start;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  line-height: 24px;
+}
+
+.numeroDestaque {
+  font-size: 60px;
+  font-weight: 700;
+  margin-right: 20px;
+}
+
+.secaoBadgeTexto,
+.secaoTitulo,
+.secaoSubtitulo,
+.numeroDestaque,
+.itemDestaque {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.6s ease;
+}
+
+.mostrare {
+  opacity: 1;
+  transform: translateY(0);
+}

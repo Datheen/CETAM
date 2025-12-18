@@ -1,0 +1,67 @@
+[
+    {
+        "title": "Introdução",
+        "subtitle": "Encanto Amazônico",
+        "content": [
+            "Bem-vindo ao Encanto Amazônico, um espaço criado para aproximar você da magia, da diversidade e da força das plantas inspiradas na maior floresta tropical do mundo. Aqui, cada espécie é escolhida para refletir a beleza e a energia da Amazônia, trazendo para o seu lar um toque de vitalidade, cor e equilíbrio natural. Nossa proposta vai além de oferecer plantas: queremos despertar sensações, inspirar cuidado e promover uma relação mais profunda entre você e o verde que transforma ambientes e vidas. Entre, explore e deixe-se envolver pelo encanto que só a natureza amazônica é capaz de proporcionar.",
+            "Explore nossa coleção e descubra o encanto da Amazônia. Traga para sua casa um pedaço dessa floresta mágica e faça parte da nossa jornada verde!"
+        ]
+    },
+
+    {
+        "title": "Sobre nós",
+        "subtitle": "Conexão sustentável",
+        "content": "Acreditamos que cada planta carrega a força silenciosa da natureza e a capacidade de transformar ambientes e pessoas. Nossa missão é criar uma ponte entre você e o mundo natural, incentivando escolhas conscientes e práticas sustentáveis no dia a dia. Trabalhamos para que cada cliente se sinta parte de um ciclo que respeita o planeta, valoriza a biodiversidade e promove um futuro mais verde."
+    },
+
+    {
+        "title": "Sobre nós",
+        "subtitle": "O que oferecemos",
+        "content": "Oferecemos uma curadoria de plantas selecionadas com cuidado, informações claras e acessíveis sobre cultivo, além de conteúdos educativos que inspiram e orientam sua jornada verde. Seja você um iniciante curioso ou um apaixonado por botânica, disponibilizamos recursos, dicas e produtos que facilitam o cuidado com as plantas e tornam a experiência mais prazerosa e segura. Nosso compromisso é unir beleza, qualidade e responsabilidade ambiental em cada detalhe."
+    },
+
+    {
+        "title": "Sobre nós",
+        "subtitle": "Convite ao cliente",
+        "content": "Convidamos você a explorar, aprender e se conectar conosco nesse caminho de crescimento e natureza. Queremos que nosso site seja mais do que um espaço de compra: um ambiente de troca, descoberta e inspiração. Junte-se a nós para cultivar não apenas plantas, mas também bem-estar, conhecimento e respeito pela vida que floresce ao nosso redor."
+    },
+
+    {
+        "title": "Missão, Visão e Valores",
+        "subtitle": "Missão",
+        "content": "Promover a conexão entre as pessoas e a natureza, oferecendo plantas amazônicas exclusivas de forma sustentável, valorizando a biodiversidade e contribuindo para a preservação ambiental."
+    },
+
+    {
+        "title": "Missão, Visão e Valores",
+        "subtitle": "Visão",
+        "content": "Ser referência nacional na comercialização de plantas amazônicas, reconhecida pela qualidade, sustentabilidade e compromisso com a conservação da biodiversidade."
+    },
+
+    {
+        "title": "Missão, Visão e Valores",
+        "subtitle": "Valores",
+        "content": "Sustentabilidade, Ética, Qualidade, Respeito à Biodiversidade, Compromisso com o Cliente."
+    },
+
+    {
+        "title": "Quem já trouxe a Amazônia para casa diz:",
+        "testimony": "Fiquei impressionada com o cuidado na embalagem. Minha Vitória-Régia chegou perfeita e cheia de vida! Recomendo o Encanto Amazônico para todos os amantes de plantas.",
+        "author": "Mariana, São Paulo/SP",
+        "image": "/src/assets/img/Sobre/depoimento1.png"
+    },
+
+    {
+        "title": "Quem já trouxe a Amazônia para casa diz:",
+        "testimony": "Além das plantas serem lindas e raras, o atendimento foi excelente. É visível o amor que eles têm pelo que fazem. Virei cliente fiel!",
+        "author": "Roberto, Curitiba/PR",
+        "image": "/src/assets/img/Sobre/depoimento2.png"
+    },
+
+    {
+        "title": "Quem já trouxe a Amazônia para casa diz:",
+        "testimony": "Achei uma iniciativa de apoio às comunidades locais fantásticas. Comprar na Encanto Amazônico é ter certeza de que estou ajudando a preservar a floresta de verdade.",
+        "author": "Patrícia, Rio de Janeiro/RJ",
+        "image": "/src/assets/img/Sobre/depoimento3.png"
+    }
+]

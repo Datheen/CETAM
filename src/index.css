@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+body #comprar #footer {
+  opacity: 0;
+}
+
+#mobile {
+  opacity: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#footer {
+  z-index: 1000;
+}
+
+#loja {
+  height: 7000px;
+}
+
+@media (max-width: 1366px) {
+  #top-header {
+    transform: scale(0.8);
+    transform-origin: top center;
+  }
+
+  
+
+  #footer {
+    margin-top: 71%;
+  }
+
+  #inicio {
+    transform: scale(0.8);
+    transform-origin: top center;
+  }
+
+  
+  
+  
+  
+  #loja {
+    transform: scale(0.8);
+    transform-origin: top center;
+    right: 70px;
+  }
+
+  #BACKGROUD {
+    opacity: 0;
+  }
+
+  #alternative {
+    opacity: 1;
+  }
+
+  #comprar {
+    transform: scale(0.8);
+    transform-origin: top left;
+  }
+
+  #painel-buy {
+    position: absolute;
+    left: 780px;
+    scale: 0.9;
+    top: 0px;
+  }
+
+  #produto {
+    margin-left: 25px;
+  }
+
+  #delivery {
+    margin-left: -135px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    background-color: black;
+  }
+
+  body > * {
+    display: none;
+  }
+
+  body::before {
+    content: "🚫 Este site não está disponível no modo mobile. Acesse pelo computador.";
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background-color: rgb(3, 49, 31);
+    color: white;
+    font-size: 18px;
+    padding: 20px;
+    z-index: 9999;
+  }
+}
