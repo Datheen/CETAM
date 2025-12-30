@@ -1,4 +1,4 @@
-import { useHref, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 
 import Footer from "../components/Footer/Footer";
@@ -29,6 +29,8 @@ function Comprar() {
   const productPrice = produto.price;
   const productRating = produto.rating;
   const productDesc = produto.description;
+  const productImgSrc = productImg.startsWith('/') ? `${import.meta.env.BASE_URL}${productImg.slice(1)}` : productImg;
+  const productRatingSrc = productRating.startsWith('/') ? `${import.meta.env.BASE_URL}${productRating.slice(1)}` : productRating;
 
   return (
     <>
@@ -55,13 +57,13 @@ function Comprar() {
           <div id="IMAGEM">
             <img
               className="w-[726px] m-5 rounded-2xl shadow-2xl shadow-green-900"
-              src={productImg}
+              src={productImgSrc}
             />
           </div>
           <div id="DESCRI" className="mt-10 flex flex-col">
             <h1 className="text-5xl font-bold text-green-900">{productName}</h1>
             <div id="rating" className="flex gap-2 mt-2">
-              <img src={productRating} />
+              <img src={productRatingSrc} />
               <p className="text-1xl font-medium">4.5 (212 avaliações)</p>
             </div>
             <h1 className="text-5xl font-bold mt-7">{productPrice}</h1>
@@ -87,10 +89,10 @@ function Comprar() {
                 id="conditions"
                 className="flex justify-center gap-20 h-15 my-10 invert-100"
               >
-                <img src="/img/Produtos/Conditions/chuva.webp" />
-                <img src="/img/Produtos/Conditions/neve.webp" />
-                <img src="/img/Produtos/Conditions/sol.webp" />
-                <img src="/img/Produtos/Conditions/temp.webp" />
+                <img src={`${import.meta.env.BASE_URL}img/Produtos/Conditions/chuva.webp`} />
+                <img src={`${import.meta.env.BASE_URL}img/Produtos/Conditions/neve.webp`} />
+                <img src={`${import.meta.env.BASE_URL}img/Produtos/Conditions/sol.webp`} />
+                <img src={`${import.meta.env.BASE_URL}img/Produtos/Conditions/temp.webp`} />
               </div>
             </div>
 
@@ -135,9 +137,9 @@ function Comprar() {
             <div id="pagamentos" className="mt-5">
               <h2 className="font-semibold text-1xl">Metodos de pagamento</h2>
               <div className="flex h-10 gap-6 mt-5">
-                <img src="/img/Produtos/Pagamentos/pix.webp" />
-                <img src="/img/Produtos/Pagamentos/Mastercard-Logo.png" />
-                <img src="/img/Produtos/Pagamentos/Boleto-Logo-Vector.svg-.png" />
+                <img src={`${import.meta.env.BASE_URL}img/Produtos/Pagamentos/pix.webp`} />
+                <img src={`${import.meta.env.BASE_URL}img/Produtos/Pagamentos/Mastercard-Logo.png`} />
+                <img src={`${import.meta.env.BASE_URL}img/Produtos/Pagamentos/Boleto-Logo-Vector.svg-.png`} />
 
                 <a onClick={()=> window.open("https://www.google.com")} className="ml-auto underline mr-4 hover:cursor-pointer hover:text-green-800">
                   Saiba mais

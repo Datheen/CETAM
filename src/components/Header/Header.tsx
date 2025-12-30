@@ -1,5 +1,5 @@
 import styles from "./Header.module.css";
-import { useSearchParams, useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function Header() {
   const navigate = useNavigate();
@@ -31,7 +31,7 @@ function Header() {
       <header className={styles.header}>
         <span>
           <img
-            src="/img/logo-w.webp"
+            src={`${import.meta.env.BASE_URL}img/logo-w.webp`}
             alt="Logotipo da Empresa"
             className={styles.logo}
           />
@@ -41,19 +41,31 @@ function Header() {
           <a onClick={() => navigate("/")} href="">
             HOME
           </a>
-          <a onClick={()=>{document.getElementById("big-card")?.scrollIntoView({
-
-            behavior:"smooth",
-            block:"start"
-          })}} className="hover:cursor-pointer">SOBRE</a>
+          <a
+            onClick={() => {
+              document.getElementById("big-card")?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }}
+            className="hover:cursor-pointer"
+          >
+            SOBRE
+          </a>
           <a onClick={handleProdutosClick} href="">
             PRODUTOS
           </a>
-          <a className="hover:cursor-pointer" onClick={()=>{document.getElementById("agendar")?.scrollIntoView({
-
-            behavior:"smooth",
-            block:"start"
-          })}}>CONTATO</a>
+          <a
+            className="hover:cursor-pointer"
+            onClick={() => {
+              document.getElementById("agendar")?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }}
+          >
+            CONTATO
+          </a>
         </nav>
       </header>
 
@@ -63,7 +75,7 @@ function Header() {
         </a>
         <img
           className="w-6 mb-[]"
-          src="/img/whatsapp.webp"
+          src={`${import.meta.env.BASE_URL}img/whatsapp.webp`}
           alt="Whatsapp Icon"
         />
       </div>

@@ -22,7 +22,7 @@ function CardsProdutos({ ids }: CardsProdutosProps) {
           key={product.id}
           className="scale-110 h-[584px] w-[366px] bg-white rounded-2xl flex flex-col justify-center items-center gap-5"
         >
-          <img src={product.image} alt={product.name} />
+          <img src={product.image.startsWith('/') ? `${import.meta.env.BASE_URL}${product.image.slice(1)}` : product.image} alt={product.name} />
 
           <div className="w-full flex flex-col ml-17">
             <h2 className="text-2xl font-bold text-zinc-800">{product.name}</h2>

@@ -2,7 +2,6 @@ import CountUp from "react-countup";
 import { useEffect } from "react";
 import styles from "./Home.module.css";
 import planta from "../../assets/img/planta-hero.webp";
-import pattern from "../../../public/img/pattern.webp";
 import retangule from "../../assets/img/Rectangle.png";
 
 function Home() {
@@ -79,12 +78,12 @@ function Home() {
           <img className={styles.heroImagem} src={planta} />
           <img
             className={styles.vtImagem}
-            src="img/vt.webp"
+            src={`${import.meta.env.BASE_URL}img/vt.webp`}
             alt="Vitória Régia"
           />
         </div>
         <div className={styles.padraoContainer}>
-          <img className={styles.padraoImagem} src={pattern} />
+          <img className={styles.padraoImagem} src={`${import.meta.env.BASE_URL}img/pattern.webp`} />
         </div>
         <div id="big-card" className={styles.cardGrande}>
           <div>
