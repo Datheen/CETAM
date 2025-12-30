@@ -2,7 +2,7 @@ import CountUp from "react-countup";
 import { useEffect } from "react";
 import styles from "./Home.module.css";
 import planta from "../../assets/img/planta-hero.webp";
-import pattern from "../../assets/img/pattern.webp";
+import pattern from "../../../public/img/pattern.webp";
 import retangule from "../../assets/img/Rectangle.png";
 
 function Home() {
@@ -56,11 +56,17 @@ function Home() {
                     data-property-1="primary"
                     className={styles.botaoPrimario}
                   >
-                    <div className={styles.botaoPrimarioTexto}>
+                    <div onClick={() => {document.getElementById("agendar")?.scrollIntoView({
+                      behavior: "smooth",
+                      block:"start"
+                    })}} className={styles.botaoPrimarioTexto}>
                       Fale conosco
                     </div>
                   </div>
-                  <div
+                  <div onClick={() => {document.getElementById("big-card")?.scrollIntoView({
+                      behavior: "smooth",
+                      block:"start"
+                    })}}
                     data-property-1="Secondary"
                     className={styles.botaoSecundario}
                   >

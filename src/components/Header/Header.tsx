@@ -4,44 +4,56 @@ import { useSearchParams, useNavigate, useLocation } from "react-router-dom";
 function Header() {
   const navigate = useNavigate();
   const location = useLocation();
-  
+
   const handleProdutosClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    
-    // Se estiver na página /comprar, navega para Home primeiro
-    if (location.pathname === '/comprar') {
-      navigate('/');
+
+    // Se estiver na página /comprar, navega para Home primeiro (By Ckristian)
+    if (location.pathname.startsWith("/comprar/")) {
+      navigate("/");
       setTimeout(() => {
-        const principal = document.getElementById('PRINCIPAL');
+        const principal = document.getElementById("LOJA");
         if (principal) {
-          principal.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          principal.scrollIntoView({ behavior: "smooth", block: "start" });
         }
       }, 100);
     } else {
-      // Se já estiver na Home, apenas rola
-      const principal = document.getElementById('PRINCIPAL');
+      // Se já estiver na Home, apenas rola (By Ckristian)
+      const principal = document.getElementById("LOJA");
       if (principal) {
-        principal.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        principal.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     }
   };
-  
+
   return (
     <div id="top-header" className="relative flex justify-center z-20">
       <header className={styles.header}>
         <span>
           <img
-            src="img/logo-w.webp"
+            src="/img/logo-w.webp"
             alt="Logotipo da Empresa"
             className={styles.logo}
           />
         </span>
 
         <nav className="z-10 font-bold text-green-900 flex gap-5">
-          <a onClick={() => navigate('/')}  href="">HOME</a>
-          <a href="">SOBRE</a>
-          <a onClick={handleProdutosClick} href="">PRODUTOS</a>
-          <a href="">CONTATO</a>
+          <a onClick={() => navigate("/")} href="">
+            HOME
+          </a>
+          <a onClick={()=>{document.getElementById("big-card")?.scrollIntoView({
+
+            behavior:"smooth",
+            block:"start"
+          })}} className="hover:cursor-pointer">SOBRE</a>
+          <a onClick={handleProdutosClick} href="">
+            PRODUTOS
+          </a>
+          <a className="hover:cursor-pointer" onClick={()=>{document.getElementById("agendar")?.scrollIntoView({
+
+            behavior:"smooth",
+            block:"start"
+          })}}>CONTATO</a>
         </nav>
       </header>
 
@@ -51,7 +63,7 @@ function Header() {
         </a>
         <img
           className="w-6 mb-[]"
-          src="img/whatsapp.webp"
+          src="/img/whatsapp.webp"
           alt="Whatsapp Icon"
         />
       </div>

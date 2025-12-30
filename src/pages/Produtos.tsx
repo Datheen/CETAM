@@ -1,1132 +1,324 @@
+import CardsProdutos from "../components/CardsProdutos";
+import Footer from "../components/Footer/Footer";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 function Produtos() {
-  const navigate = useNavigate();
+  const navigator = useNavigate();
 
   useEffect(() => {
-    const elements = document.querySelectorAll(".mostrar");
-
+    const elements = document.querySelectorAll(".animar");
     const observer = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const el = entry.target as HTMLElement;
-            el.classList.remove("opacity-0", "translate-y-11");
-            obs.unobserve(el);
-          }
-        });
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove("opacity-0", "translate-y-10");
+          entry.target.classList.add("translate-y-0");
+        }
       },
-      { threshold: 0.2 }
+      { threshold: 0.3 }
     );
 
     elements.forEach((el) => observer.observe(el));
 
-    
-    const scrollToCategory = (categoryId: string) => {
-      const section = document.getElementById(categoryId);
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    };
-
-    const categoryImages = [
-      { img: document.querySelector('img[src*="ball1.jpeg"]'), section: 'SECTION-ORQUIDEAS' },
-      { img: document.querySelector('img[src*="ball2.jpg"]'), section: 'SECTION-SAMAMBAIAS' },
-      { img: document.querySelector('img[src*="ball3.webp"]'), section: 'SECTION-BROMELIAS' },
-      { img: document.querySelector('img[src*="ball4.jpg"]'), section: 'SECTION-SUCULENTAS' },
-      { img: document.querySelector('img[src*="ball5.jpg"]'), section: 'SECTION-BEGONIAS' },
-      { img: document.querySelector('img[src*="ball6.jpg"]'), section: 'SECTION-ALOCASIAS' },
-    ];
-
-    categoryImages.forEach(({ img, section }) => {
-      if (img) {
-        img.addEventListener('click', () => scrollToCategory(section));
-      }
-    });
-
-    const handler = (e: Event) => {
-      const btn = e.currentTarget as HTMLElement;
-
-      const card = btn.closest(
-        '[data-type="Default"], [data-type="Overlay"]'
-      ) as HTMLElement | null;
-      let name = "";
-      let imgSrc = "";
-      let preco = "";
-
-      if (card) {
-        const img = card.querySelector("img") as HTMLImageElement | null;
-        if (img) imgSrc = img.src;
-
-        const divs = Array.from(card.querySelectorAll("div"));
-        for (const d of divs) {
-          const t = d.textContent?.trim();
-          if (t && t.includes("R$")) {
-            preco = t;
-          } else if (
-            t &&
-            t.length > 0 &&
-            !t.includes("R$") &&
-            t !== "Comprar" &&
-            t.length < 40 &&
-            !name
-          ) {
-            name = t;
-          }
-        }
-      }
-
-      if (name && imgSrc) {
-        const productData = btoa(JSON.stringify({ name, imgSrc, preco }));
-        navigate(`/comprar?data=${productData}`);
-      }
-    };
-
-    const attached: HTMLElement[] = [];
-    const candidates = Array.from(
-      document.querySelectorAll<HTMLElement>("div,button,span,a")
-    );
-    candidates.forEach((el) => {
-      if (el.textContent && el.textContent.trim() === "Comprar") {
-        el.classList.add("buy");
-        el.addEventListener("click", handler);
-        attached.push(el);
-      }
-    });
-
-    return () => {
-      observer.disconnect();
-      attached.forEach((el) => el.removeEventListener("click", handler));
-      
-      
-      categoryImages.forEach(({ img, section }) => {
-        if (img) {
-          img.removeEventListener('click', () => scrollToCategory(section));
-        }
-      });
-    };
-  }, [navigate]);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <div id="loja" className="relative flex-1">
-      <div
-        id="BACKGROUD"
-        className=" z-2 w-full h-[6950px] relative top-[1148px] bg-green-950"
-      ></div>
-
-      <div
-        id="alternative"
-        className=" z-2 w-[1920px] h-[6950px] left-[-100px] relative top-[-5802px] opacity-0 bg-green-950"
-      ></div>
-
-      <div
-        id="PRINCIPAL"
-        className="z-2 flex flex-col items-center justify-center w-[1540px] h-[9840px] bottom-[13600px] relative bg-[#E8F3DF] overflow-hidden mx-auto"
-      >
-        <div className="mostrar translate-y-11 duration-700 ease-out transition-all opacity-0 absolute top-2 left-26 z-2">
-          <div
-            id="BANNER"
-            className="left-[-30px] top-12 absolute inline-flex flex-col justify-start items-start gap-12"
-          >
-            <div className="flex flex-col justify-start items-start gap-6">
-              <div className="w-[600px] justify-start text-green-800 text-6xl font-extrabold font-['Poppins'] leading-16">
-                Compre a planta dos seus sonhos!
-              </div>
-              <div className="inline-flex justify-start items-center gap-12">
-                <img className="w-50" src="img/logo-w -alt.png" />
-              </div>
-            </div>
-            <div className="w-96 h-16 relative bg-white rounded-xl overflow-hidden">
-              <div className="left-[18px] top-[18px] absolute justify-start text-stone-900/50 text-lg font-medium font-['Poppins']">
-                Oque você está proucurando?
-              </div>
-              <div className="w-12 h-12 left-[393px] top-2 absolute bg-slate-300 rounded-xl" />
-              <div className="w-5 h-5 left-[407px] top-[22px] absolute overflow-hidden"></div>
-            </div>
-          </div>
-          <div className="w-96 ml-30 h-96 left-[726px] top-[123px] absolute bg-stone-800 rounded-tl-[200px] rounded-tr-[200px] rounded-bl-[200px]" />
+    <div id="LOJA" className="w-full mt-80 h-screen">
+      <div id="BANNER" className="grid grid-cols-2 gap-0">
+        <div
+          id="LADO-ESQUERDO"
+          className="flex flex-col h-[400px] items-end justify-center "
+        >
+          <h1 className="text-green-700 font-bold text-6xl w-160">
+            Compre a planta dos seus sonhos!
+          </h1>
           <img
-            className="ml-217 top-[-52px] relative z-10"
-            src="img/Produtos/banner.webp"
+            className="relative right-[436px] w-[200px]"
+            src="src\assets\img\logo-w -alt.png"
+            alt=""
           />
-          <div className="w-28 h-44 left-[638px] top-[359.19px] absolute origin-top-left rotate-[-53.14deg]  outline-4 -outline-offset-2 outline-green-800" />
-          <div className="w-28 h-36 left-[1227px] top-[13px] absolute origin-top-left rotate-[18.13deg]  outline-[5px] outline-offset-[-2.50px] outline-green-800" />
-        </div>
-
-        <div className="cursor-pointer  left-[120px] top-[592px] absolute inline-flex flex-col justify-center items-center gap-7">
-          <div className="flex justify-between gap-16 ml-[-59px]">
-            <div className="flex-1 h-56 inline-flex flex-col justify-center items-center gap-6">
-              <img
-                id="goto-orquideas"
-                className="cursor-pointer hover:scale-120 translate-y-11 transition-all duration-700 ease-out mostrar self-stretch h-44 w-[178px] shadow-[0px_8px_23px_0px_rgba(80,107,82,0.16)] rounded-full"
-                src="img/Produtos/Ball/ball1.jpeg"
-              />
-              <div className="mostrar translate-y-11 duration-700 ease-out transition-all opacity-0 self-stretch text-center justify-start text-green-900 text-base font-bold font-['Poppins'] uppercase tracking-[3.20px]">
-                Orquideas
-              </div>
-            </div>
-            <div className="flex-1 h-56 inline-flex flex-col justify-center items-center gap-6">
-              <img
-                className="cursor-pointer translate-y-11 hover:scale-120 transition-all w-[178px] duration-700 ease-out mostrar self-stretch h-44 rounded-[125px] shadow-[0px_8px_23px_0px_rgba(80,107,82,0.16)]"
-                src="img/Produtos/Ball/ball2.jpg"
-              />
-              <div className="mostrar translate-y-11 duration-700 ease-out transition-all opacity-0 self-stretch text-center justify-start text-green-900 text-base font-bold font-['Poppins'] uppercase tracking-[3.20px]">
-                Samambaias
-              </div>
-            </div>
-            <div className="flex-1 h-56 inline-flex flex-col justify-center items-center gap-6">
-              <img
-                className="w-[178px] cursor-pointer hover:scale-120 translate-y-11 transition-all duration-700 ease-out mostrar self-stretch h-44 rounded-[125px] shadow-[0px_8px_23px_0px_rgba(80,107,82,0.16)]"
-                src="img/Produtos/Ball/ball3.webp"
-              />
-              <div className=" mostrar translate-y-11 duration-700 ease-out transition-all opacity-0 self-stretch text-center justify-start text-green-900 text-base font-bold font-['Poppins'] uppercase tracking-[3.20px]">
-                Bromélias
-              </div>
-            </div>
-            <div className="flex-1 h-56 inline-flex flex-col justify-center items-center gap-6">
-              <img
-                className="w-[178px] cursor-pointer hover:scale-120 translate-y-11 transition-all duration-700 ease-out mostrar self-stretch h-44 rounded-[125px] shadow-[0px_8px_23px_0px_rgba(80,107,82,0.16)]"
-                src="img/Produtos/Ball/ball4.jpg"
-              />
-              <div className="mostrar translate-y-11 duration-700 ease-out transition-all opacity-0 self-stretch text-center justify-start text-green-900 text-base font-bold font-['Poppins'] uppercase tracking-[3.20px]">
-                Suculentas
-              </div>
-            </div>
-            <div className="flex-1 h-56 inline-flex flex-col justify-center items-center gap-6">
-              <img
-                className="cursor-pointer hover:scale-120 translate-y-11 transition-all duration-700 ease-out mostrar self-stretch h-44 rounded-[125px] shadow-[0px_8px_23px_0px_rgba(80,107,82,0.16)]"
-                src="img/Produtos/Ball/ball5.jpg"
-              />
-              <div className="mostrar translate-y-11 duration-700 ease-out transition-all opacity-0 self-stretch text-center justify-start text-green-900 text-base font-bold font-['Poppins'] uppercase tracking-[3.20px]">
-                Begônias
-              </div>
-            </div>
-            <div className="flex-1 h-56 inline-flex flex-col justify-center items-center gap-6">
-              <img
-                className="w-[178px] cursor-pointer hover:scale-120 translate-y-11 transition-all duration-700 ease-out mostrar self-stretch h-44 rounded-[125px] shadow-[0px_8px_23px_0px_rgba(80,107,82,0.16)]"
-                src="img/Produtos/Ball/ball6.jpg"
-              />
-              <div className="mostrar translate-y-11 duration-700 ease-out transition-all opacity-0 self-stretch text-center justify-start text-green-900 text-base font-bold font-['Poppins'] uppercase tracking-[3.20px]">
-                Alocasias
-              </div>
-            </div>
+          <div className="mr-83 mt-19 bg-white/70 h-15 w-[300px] rounded-full text-zinc-800/60 font-medium  text-[13pt] text-center flex items-center justify-center">
+            <p>Oque você está proucurando?</p>
           </div>
         </div>
+
+        <div id="LADO-DIREITO" className="flex h-[400px]">
+          <div className="w-28 h-44 relative top-[165px] left-20 rotate-[-53.14deg]  outline-4 -outline-offset-2 outline-green-800 shrink-0" />
+          <div className="w-96 ml-30 h-96 relative left-2 top-[15px] bg-stone-800 rounded-tl-[200px] rounded-tr-[200px] rounded-bl-[200px] shrink-0" />
+
+          <img
+            className="z-10 h-135 relative bottom-[141px] right-[345px]"
+            src="src\assets\img\Produtos\banner.webp"
+            alt=""
+          />
+          <div className="w-28 h-36 relative right-[400px] top-10 rotate-[18.13deg]  outline-[5px] outline-offset-[-2.50px] outline-green-800 shrink-0" />
+        </div>
+      </div>
+
+
+
+
+      <div id="PAINEL-CATEGORIAS" className="flex justify-center gap-20 -mb-16 w-full h-60 mt-50 ">
+
+       <div onClick={() => {document.getElementById("ORQUIDEAS")?.scrollIntoView({
+
+        behavior:"smooth",
+        block:"start"
+       })}} className="flex flex-col w-[170px]">
+        <img className="w-[170px] h-[170px] rounded-full hover:scale-110 transition-all cursor-pointer" src="/img/Produtos/Ball/ball1.jpeg"/>
+        <h2 className="flex justify-center mt-2 font-semibold text-[14pt] text-green-950">ORQUIDEAS</h2>
+       </div>
+
+
+        <div onClick={() => {document.getElementById("SAMAMBAIAS")?.scrollIntoView({
+          behavior:"smooth",
+          block:"start"
+        })}} className="flex flex-col w-[170px]">
+        <img className="w-[170px] h-[170px] rounded-full hover:scale-110 transition-all cursor-pointer" src="/img/Produtos/Ball/ball2.jpg"/>
+        <h2 className="flex justify-center mt-2 font-semibold text-[14pt] text-green-950">SAMAMBAIAS</h2>
+       </div>
+
+
+        <div onClick={()=> {document.getElementById("BROMELIAS")?.scrollIntoView({
+
+          behavior:"smooth",
+          block:"start"
+        })}} className="flex flex-col w-[170px]">
+        <img className="w-[170px] h-[170px] rounded-full hover:scale-110 transition-all cursor-pointer" src="/img/Produtos/Ball/ball3.webp"/>
+        <h2 className="flex justify-center mt-2 font-semibold text-[14pt] text-green-950">BROMÉLIAS</h2>
+       </div>
+
+
+        <div onClick={() => {document.getElementById("SUCULENTAS")?.scrollIntoView({
+
+          behavior:"smooth",
+          block:"start"
+        })}} className="flex flex-col w-[170px]">
+        <img className="w-[170px] h-[170px] rounded-full hover:scale-110 transition-all cursor-pointer" src="/img/Produtos/Ball/ball4.jpg"/>
+        <h2 className="flex justify-center mt-2 font-semibold text-[14pt] text-green-950">SUCULENTAS</h2>
+       </div>
+
+        <div onClick={()=>{document.getElementById("BEGONIAS")?.scrollIntoView({
+
+          behavior:"smooth",
+          block:"start"
+        })}} className="flex flex-col w-[170px]">
+        <img className="w-[170px] h-[170px] rounded-full hover:scale-110 transition-all cursor-pointer" src="/img/Produtos/Ball/ball5.jpg"/>
+        <h2 className="flex justify-center mt-2 font-semibold text-[14pt] text-green-950">BEGÔNIAS</h2>
+       </div>
+
+        <div onClick={()=>{document.getElementById("PRODUTOS")?.scrollIntoView({
+          behavior:"smooth",
+          block:"start"
+        })}} className="flex flex-col w-[170px]">
+        <img className="w-[170px] h-[170px] rounded-full hover:scale-110 transition-all cursor-pointer" src="/img/Produtos/Ball/ball6.jpg"/>
+        <h2 className="flex justify-center mt-2 font-semibold text-[14pt] text-green-950">ALOCASIAS</h2>
+       </div>
+
+      </div>
+     
+
+      <div
+        id="MAIS-VENDIDOS"
+        className="flex flex-col items-center justify-center bg-green-950 h-auto mt-10 z-8"
+      >
         <div
-          id="INNER-BACKGROUND"
-          className="h-[6950px] w-full bg-green-950 absolute top-212"
+          id="bug" //Eu coloquei isso para corrigir as cores do background em notebooks
+          className="hidden w-[2000px] h-1800 bg-green-950 absolute top-0"
         ></div>
-        <div className="w-[1200px] h-[536px] left-[120px] top-[867px] absolute inline-flex flex-col justify-start items-center gap-7">
-          <div className="flex flex-col justify-start items-center gap-3.5">
-            <div className="ml-22 mt-20 text-center justify-start text-white text-4xl font-bold font-['Poppins']">
-              Mais Vendidos
+        <h1 className="text-4xl text-white font-semibold text-center mt-20 z-10">
+          Mais vendidos
+        </h1>
+        <div
+          id="CARDS-MAIS"
+          className="max-w-[1920px] w-full mx-auto
+ grid grid-cols-3 scale-85 gap-40 mt-20"
+        >
+          <div id="CARD" className="flex flex-col justify-center items-center">
+            <div className="bg-white">
+              <h2 className="text-green-900 font-semibold text-center text-2xl pt-4 tracking-[8px]">
+                CABARÁ
+              </h2>
+              <img
+                className="mt-3 pl-4 pr-4 pb-4 object-cover"
+                src="src\assets\img\Produtos\Trending\cabará.webp"
+              />
             </div>
-
-            <br />
-            <br />
-            <br />
-            <br />
+            <div
+              id="button"
+              className="flex text-3xl text-green-800 font-bold w-100 h-19 mt-7 bg-white rounded-full text-center justify-center items-center cursor-pointer hover:scale-105 transition-all"
+            >
+              Comprar
+            </div>
           </div>
-          <div className="scale-120 ml-10 self-stretch flex-1 inline-flex justify-start items-start gap-15 w-full">
-            <div
-              data-type="Overlay"
-              className="flex-1 self-stretch p-5 inline-flex flex-col justify-start items-start gap-4"
-            >
-              <div className="self-stretch flex-1 p-2 bg-white  inline-flex justify-center items-center gap-2.5">
-                <div className="flex-1 self-stretch text-center justify-center text-green-800 text-1xl font-semibold font-['Poppins'] uppercase tracking-[4.80px] [text-shadow:_0px_4px_4px_rgb(52_52_52_/_0.25)]poppins">
-                  Cabará
-                  <img src="img/Produtos/Trending/cabará.webp" />
-                </div>
-              </div>
-              <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch rounded-full h-16 p-2 bg-white shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                <div className="flex-1 text-center justify-start text-green-800 text-xl font-bold font-['Poppins']">
-                  Comprar
-                </div>
-              </div>
+
+          <div
+            id="CARD"
+            className="flex flex-col justify-center items-center scale-115"
+          >
+            <div className="bg-white">
+              <h2 className="text-green-900 font-semibold text-center text-2xl pt-4 tracking-[8px]">
+                CALADIUM
+              </h2>
+              <img
+                className="mt-3 pl-4 pr-4 pb-4 object-cover"
+                src="src\assets\img\Produtos\Trending\tironhão.webp"
+              />
             </div>
             <div
-              data-type="Overlay"
-              className=" scale-120 flex-1 self-stretch p-5 bg- inline-flex flex-col justify-start items-start gap-4"
+              id="button"
+              className="flex text-3xl text-green-800 font-bold w-100 h-19 mt-7 bg-white rounded-full text-center justify-center items-center cursor-pointer hover:scale-105 transition-all"
             >
-              <div className=" self-stretch flex-1 p-2 bg-white  inline-flex justify-center items-center gap-2.5">
-                <div className="flex-1 self-stretch text-center justify-center text-green-800 text-1xl font-semibold font-['Poppins'] uppercase tracking-[4.80px] [text-shadow:0px_4px_4px_rgb(52_52_52/0.25)]">
-                  Caladium
-                  <img src="img/Produtos/Trending/tironhão.webp" />
-                </div>
-              </div>
-              <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch rounded-full h-16 p-2 bg-white shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                <div className="flex-1 text-center justify-start text-green-800 text-xl font-bold font-['Poppins']">
-                  Comprar
-                </div>
-              </div>
+              Comprar
+            </div>
+          </div>
+
+          <div id="CARD" className="flex flex-col justify-center items-center">
+            <div className="bg-white">
+              <h2 className="text-green-900 font-semibold text-center text-2xl pt-4 tracking-[8px]">
+                ROSA DO DESERTO
+              </h2>
+              <img
+                className="mt-3 pl-4 pr-4 pb-4 object-cover"
+                src="src\assets\img\Produtos\Trending\rosa-do-deserto.webp"
+              />
             </div>
             <div
-              data-type="Overlay"
-              className="flex-1 self-stretch p-5 inline-flex flex-col justify-start items-start gap-4"
+              id="button"
+              className="flex text-3xl text-green-800 font-bold w-100 h-19 mt-7 bg-white rounded-full text-center justify-center items-center cursor-pointer hover:scale-105 transition-all"
             >
-              <div className="self-stretch flex-1 p-2 bg-white  inline-flex justify-center items-center gap-2.5">
-                <div className="flex-1 self-stretch text-center justify-center text-green-800 text-1xl font-semibold font-['Poppins'] uppercase tracking-[4.80px] [text-shadow:0px_4px_4px_rgb(52_52_52/0.25)]">
-                  Rosa do deserto
-                  <img src="img/Produtos/Trending/rosa-do-deserto.webp" />
-                </div>
-              </div>
-              <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch rounded-full h-16 p-2 bg-white shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                <div className="flex-1 text-center justify-start text-green-800 text-xl font-bold font-['Poppins']">
-                  Comprar
-                </div>
-              </div>
+              Comprar
             </div>
           </div>
         </div>
-
-        <div
-          id="SECTION-ALOCASIAS"
-          className="mostrar translate-y-11 duration-700 ease-out transition-all opacity-0 w-[1200px] h-[861px] left-[120px] top-[1723px] absolute inline-flex flex-col justify-start items-center gap-7"
-        >
-          <div className="flex flex-col justify-start items-center gap-3.5">
-            <div className="ml-22 text-center justify-start text-white mt-10 text-5xl font-bold font-['Poppins']">
+        <div id="PRODUTOS" className="scale-85 -mt-80">
+          <div
+            id="ALOCACIAS"
+            className="max-w-[1920px] w-full mx-auto
+"
+          >
+            <h1 className="text-center flex flex-col justify-center items-center text-5xl text-white font-bold mt-20">
               Alocasias
-            </div>
-            <div className="ml-22 w-48 h-0 outline-2 mb-10 -outline-offset-1 outline-white/80" />
-          </div>
-          <div className="self-stretch flex-1 flex flex-col justify-start items-start gap-6 ml-[-120px] w-[1540px]">
-            <div className="self-stretch flex-1 inline-flex justify-start items-start gap-6">
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="img/Produtos/Categorias/Alocacias/Alocasia - Cuprea.webp" />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Cuprea
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 79,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="img/Produtos/Categorias/Alocacias/Alocasia - Odora.jpg" />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Odora
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 29,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="img/Produtos/Categorias/Alocacias/Alocasia - Polly.jpeg" />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Polly
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 69,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="img/Produtos/Categorias/Alocacias/Alocasia Clypeolata.webp" />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Clypeolata
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 49,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-            </div>
+              <div id="outline" className="h-1 w-[1853px] bg-white mt-4"></div>
+            </h1>
 
             <div
-              id="GRADE-2"
-              className="self-stretch flex-1 inline-flex justify-start items-start gap-6"
+              id="GRADE-PRODUTOS"
+              className="max-w-[1920px] w-full mx-auto
+ grid grid-cols-4 gap-y-30 gap-3 ml-11 mt-30"
             >
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img
-                  className="w-[230px] ml-12 mb-2"
-                  src="img/Produtos/Categorias/Alocacias/Alocasia - Black Velvet.webp"
-                />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Black Velvet
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 49,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img
-                  className="w-[285px] ml-5 mb-4"
-                  src="img/Produtos/Categorias/Alocacias/Alocasia - Dragon Scale.webp"
-                />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Dragon Scale
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 79,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img
-                  className="w-[280px] ml-5"
-                  src="img/Produtos/Categorias/Alocacias/Alocasia - Zebrina.webp"
-                />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Zebrina
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 49,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img
-                  className="w-[245px] ml-10"
-                  src="img/Produtos/Categorias/Alocacias/Alocasia -Sinuata.webp"
-                />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Sinuata
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 39,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
+              <CardsProdutos ids={[1, 2, 3, 4, 5, 6, 7, 8]} />
             </div>
           </div>
-        </div>
 
-        <div
-          id="SECTION-BROMELIAS"
-          className="mostrar translate-y-11 duration-700 ease-out transition-all opacity-0 w-[1200px] h-[561px] left-[120px] top-[3123px] absolute inline-flex flex-col justify-start items-center gap-7"
-        >
-          <div className="flex flex-col justify-start items-center gap-3.5">
-            <div className="ml-22   text-center justify-start text-white mt-10 text-5xl font-bold font-['Poppins']">
-              Bromelias
-            </div>
-            <div className="ml-22   w-48 h-0 outline-2 mb-10 -outline-offset-1 outline-white/80" />
-          </div>
-          <div className="self-stretch flex-1 flex flex-col justify-start items-start gap-6 ml-[-120px] w-[1540px]">
-            <div className="self-stretch flex-1 inline-flex justify-start items-start gap-6">
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="img/Produtos/Categorias/Bromelias/Bromelias - Aechmea chantinii.webp" />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Aechmea chantinii
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 79,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="img/Produtos/Categorias/Bromelias/Bromelias - Guzmania.webp" />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Guzmania
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 59,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="img/Produtos/Categorias/Bromelias/Bromelias - Aechmea.jpg" />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Aechmea
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 69,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="img/Produtos/Categorias/Bromelias/Bromelias - Tillandsia.webp" />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Tillandsia
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 49,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
+          <div
+            id="BROMELIAS"
+            className="max-w-[1920px] w-full mx-auto
+ mt-50"
+          >
+            <h1 className="text-center text-5xl text-white font-bold mt-20 flex flex-col items-center">
+              Bromélias
+              <div id="outline" className="h-1 w-[1853px] bg-white mt-4"></div>
+            </h1>
+            <div
+              id="GRADE-PRODUTOS"
+              className="max-w-[1920px] w-full mx-auto
+ grid grid-cols-4 gap-y-30 gap-3 ml-11 mt-30"
+            >
+              <CardsProdutos ids={[9, 10, 11, 12]} />
             </div>
           </div>
-        </div>
 
-        <div
-          id="SECTION-SUCULENTAS"
-          className="mostrar translate-y-11 duration-700 ease-out transition-all opacity-0 w-[1200px] h-[561px] left-[120px] top-[3900px] absolute inline-flex flex-col justify-start items-center gap-7"
-        >
-          <div className="flex flex-col justify-start items-center gap-3.5">
-            <div className="ml-22  text-center justify-start text-white mt-10 text-5xl font-bold font-['Poppins']">
-              Suculentas
-            </div>
-            <div className="ml-22  w-48 h-0 outline-2 mb-10 -outline-offset-1 outline-white/80" />
-          </div>
-          <div className="self-stretch flex-1 flex flex-col justify-start items-start gap-6 ml-[-120px] w-[1540px]">
-            <div className="self-stretch flex-1 inline-flex justify-start items-start gap-6">
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="img/Produtos/Categorias/Suculentas/Suculenta - Gasteria Maculata.jpg" />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Gasteria Maculata
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 79,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img
-                  className="w-[260px] ml-8 mb-7"
-                  src="img/Produtos/Categorias/Suculentas/Suculentas - Aeonium.jpg"
-                />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Aeonium
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 29,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="img/Produtos/Categorias/Suculentas/Suculentas - Echeveria Agavoides.jpg" />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Echeveria Agavoides
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 69,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="img/Produtos/Categorias/Suculentas/Suculentas - Echeveria.jpg" />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Echeveria
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 49,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          id="SECTION-ORQUIDEAS"
-          className="mostrar translate-y-11 duration-700 ease-out transition-all opacity-0 mostrar w-[1200px] h-[861px] left-[120px] top-[4713px] absolute inline-flex flex-col justify-start items-center gap-7"
-        >
-          <div className="flex flex-col justify-start items-center gap-3.5">
-            <div className="ml-22 text-center justify-start text-white mt-20 text-5xl font-bold font-['Poppins']">
+          <div
+            id="ORQUIDEAS"
+            className="max-w-[1920px] w-full mx-auto
+ mt-50"
+          >
+            <h1 className="text-center text-5xl text-white font-bold mt-20 flex flex-col justify-center items-center">
               Orquídeas
-            </div>
-            <div className="ml-22 w-full h-0 outline-2 mb-10 -outline-offset-1 outline-white/80" />
-          </div>
-          <div className="self-stretch flex-1 flex flex-col justify-start items-start gap-6 ml-[-120px] w-[1540px]">
-            <div className="self-stretch flex-1 inline-flex justify-start items-start gap-6">
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img
-                  className="ml-12 w-[230px]"
-                  src="img/Produtos/Categorias/Orquideas/Orquideas - Chomthong.webp"
-                />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Chomthong
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 69,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img
-                  className="w-[235px] ml-10"
-                  src="img/Produtos/Categorias/Orquideas/Orquideas - Looge Tone Red.webp"
-                />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Looge Tone Red
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 49,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img
-                  className="w-[238px] ml-10"
-                  src="img/Produtos/Categorias/Orquideas/Orquideas - Phalaenopsis Manchada.jpg"
-                />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Phalaenopsis Manchada
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 69,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img
-                  className="w-[236px] ml-10 mb-1"
-                  src="img/Produtos/Categorias/Orquideas/Orquideas - Sophoronitis.webp"
-                />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Sophoronitis
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 49,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-            </div>
-
+              <div id="outline" className="h-1 w-[1853px] bg-white mt-4"></div>
+            </h1>
             <div
-              id="GRADE-2"
-              className="self-stretch flex-1 inline-flex justify-start items-start gap-6"
+              id="GRADE-PRODUTOS"
+              className="max-w-[1920px] w-full mx-auto
+ grid grid-cols-4 gap-y-30 gap-3 ml-11 mt-30"
             >
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="img/Produtos/Categorias/Orquideas/Orquidea - Alpino.webp" />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Alpino
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 39,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="img/Produtos/Categorias/Orquideas/Orquidea - Blanca Phalaenopsis.webp" />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Blanca Phalaenopsis
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 59,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="img/Produtos/Categorias/Orquideas/Orquidea - Cascatas.webp" />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Cascatas
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 29,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="img/Produtos/Categorias/Orquideas/Orquidea - Phalaenopsis.webp" />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Phalaenopsis
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 39,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
+              <CardsProdutos ids={[13, 14, 15, 16, 17, 18, 19, 20]} />
             </div>
           </div>
-        </div>
 
-        <div
-          id="SECTION-BEGONIAS"
-          className="mostrar translate-y-11 duration-700 ease-out transition-all opacity-0 w-[1200px] h-[561px] left-[120px] top-[6110px] absolute inline-flex flex-col justify-start items-center gap-7"
-        >
-          <div className="flex flex-col justify-start items-center gap-3.5">
-            <div className="ml-22 text-center justify-start text-white mt-10 text-5xl font-bold font-['Poppins']">
+          <div
+            id="SAMAMBAIAS"
+            className="max-w-[1920px] w-full mx-auto
+ mt-50"
+          >
+            <h1 className="text-center text-5xl text-white font-bold mt-20 flex flex-col items-center">
+              Samambaias{" "}
+              <div id="outline" className="h-1 w-[1853px] bg-white mt-4"></div>
+            </h1>
+            <div
+              id="GRADE-PRODUTOS"
+              className="max-w-[1920px] w-full mx-auto
+ grid grid-cols-4 gap-y-30 gap-3 ml-11 mt-30"
+            >
+              <CardsProdutos ids={[21, 22, 23, 24]} />
+            </div>
+          </div>
+
+          <div
+            id="SUCULENTAS"
+            className="max-w-[1920px] w-full mx-auto
+ mt-50"
+          >
+            <h1 className="text-center text-5xl text-white font-bold mt-20 flex flex-col items-center">
+              Suculentas
+              <div id="outline" className="h-1 w-[1853px] bg-white mt-4"></div>
+            </h1>
+            <div
+              id="GRADE-PRODUTOS"
+              className="max-w-[1920px] w-full mx-auto
+ grid grid-cols-4 gap-y-30 gap-3 ml-11 mt-30"
+            >
+              <CardsProdutos ids={[25, 26, 27, 28]} />
+            </div>
+          </div>
+
+          <div
+            id="BEGONIAS"
+            className="max-w-[1920px] w-full mx-auto
+ mt-50 flex flex-col items-center"
+          >
+            <h1 className="text-center text-5xl text-white font-bold mt-20">
               Begônias
-            </div>
-            <div className="ml-22 w-48 h-0 outline-2 mb-10 -outline-offset-1 outline-white/80" />
-          </div>
-          <div className="self-stretch flex-1 flex flex-col justify-start items-start gap-6 ml-[-120px] w-[1540px]">
-            <div className="self-stretch flex-1 inline-flex justify-start items-start gap-6">
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="img/Produtos/Categorias/Alocacias/Alocasia - Cuprea.webp" />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Cuprea
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 79,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="img/Produtos/Categorias/Alocacias/Alocasia - Odora.jpg" />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Odora
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 29,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="img/Produtos/Categorias/Alocacias/Alocasia - Polly.jpeg" />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Polly
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 69,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="img/Produtos/Categorias/Alocacias/Alocasia Clypeolata.png" />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Clypeolata
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 49,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
+              <div id="outline" className="h-1 w-[1853px] bg-white mt-4"></div>
+            </h1>
+            <div
+              id="GRADE-PRODUTOS"
+              className="max-w-[1920px] w-full mx-auto
+ grid grid-cols-4 gap-y-30 gap-3 ml-11 mt-30"
+            >
+              <CardsProdutos ids={[29, 30, 31, 32]} />
             </div>
           </div>
         </div>
+      </div>
 
-        <div
-          id="SECTION-SAMAMBAIAS"
-          className="mostrar translate-y-11 duration-700 ease-out transition-all opacity-0 w-[1200px] h-[561px] left-[120px] top-[6900px] absolute inline-flex flex-col justify-start items-center gap-7"
-        >
-          <div className="flex flex-col justify-start items-center gap-3.5">
-            <div className="ml-22 text-center justify-start text-white mt-10 text-5xl font-bold font-['Poppins']">
-              Samambaias
-            </div>
-            <div className="ml-22 w-48 h-0 outline-2 mb-10 -outline-offset-1 outline-white/80" />
-          </div>
-          <div className="self-stretch flex-1 flex flex-col justify-start items-start gap-6 ml-[-120px] w-[1540px]">
-            <div className="self-stretch flex-1 inline-flex justify-start items-start gap-6">
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="img/Produtos/Categorias/Samambaias/Samambaias - Americana.webp" />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Americana
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 39,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="img/Produtos/Categorias/Samambaias/Samambaias - De Sol.webp" />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    De Sol
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 29,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="img/Produtos/Categorias/Samambaias/Samambaias - Gleichenia.webp" />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Gleichenia
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 99,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-              <div
-                data-type="Default"
-                className="flex-1 self-stretch p-5 bg-white rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex flex-col justify-start items-start gap-4"
-              >
-                <div className="self-stretch flex-1 p-2 rounded-lg flex flex-col justify-start items-start"></div>
-                <img src="img/Produtos/Categorias/Samambaias/Samambaias - Prata.webp" />
-                <div className="self-stretch px-2 flex flex-col justify-center items-start gap-1">
-                  <div className="self-stretch justify-start text-neutral-700 text-xl font-bold font-['Poppins']">
-                    Prata
-                  </div>
-                  <div className="self-stretch inline-flex justify-start items-center gap-2">
-                    <div className="text-center justify-start text-neutral-700 text-xl font-normal font-['Poppins']">
-                      R$ 49,99
-                    </div>
-                  </div>
-                </div>
-                <div className="buy cursor-pointer hover:scale-105 transition-all self-stretch h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-                  <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
-                    Comprar
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
+      <div
+        id="SEGUNDA-PARTE"
+        className="flex flex-col items-center justify-center bg-[#e8f3df] z-10 -mt-70"
+      >
         <div
           id="DEPOIMENTOS"
-          className="w-[1340px] left-[120px] top-[8100px] absolute inline-flex justify-start items-center gap-6"
+          className="w-[1440px]  inline-flex justify-start items-center gap-6 mt-20 "
         >
           <div className="flex-1 inline-flex flex-col justify-center items-start gap-7">
             <div className="self-stretch flex flex-col justify-start items-start gap-5">
               <div className="self-stretch flex flex-col justify-start items-start gap-3.5">
-                <div className="self-stretch justify-start text-neutral-700 text-5xl font-bold font-['Unna']">
+                <div
+                  id="agendar"
+                  className="self-stretch justify-start text-neutral-700 text-5xl font-bold font-['Unna']"
+                >
                   Jardinagem Paisagística
                 </div>
                 <div className="w-48 h-0 outline-2 -outline-offset-1 outline-neutral-700/80" />
@@ -1149,8 +341,13 @@ function Produtos() {
                 </span>
               </div>
             </div>
-            <div className="cursor-pointer hover:bg-amber-950 transition-all w-72 h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
-              <div className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']">
+            <div className="cursor-pointer hover:bg-green-500 transition-all w-72 h-16 p-2 bg-green-700 rounded-lg shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] inline-flex justify-center items-center gap-2.5">
+              <div
+                onClick={() => {
+                  window.open("https://wa.me/5592985355192");
+                }}
+                className="flex-1 text-center justify-start text-white text-xl font-bold font-['Poppins']"
+              >
                 Agende Agora!
               </div>
             </div>
@@ -1162,13 +359,12 @@ function Produtos() {
         </div>
         <div
           id="GALERIA"
-          className="mt-350 w-[1200px] left-[175px] top-[7343px] absolute inline-flex flex-col justify-center items-center gap-7"
+          className="my-40 w-[1300px] inline-flex flex-col justify-center items-center gap-7"
         >
           <div className="flex flex-col justify-start items-center gap-3.5">
             <div className="justify-start text-green-900 text-5xl font-bold font-['Poppins']">
-              Experiências de quem ama nossas plantas
+              ‪‪❤︎‬ Experiências de quem ama nossas plantas ‪‪❤︎‬
             </div>
-            <div className="w-48 h-0 outline-2 -outline-offset-1 outline-green-900" />
           </div>
           <div className="scale-120 mt-20 self-stretch h-[640px] rounded-2xl shadow-[0px_8px_23px_0px_rgba(59,130,62,0.13)] flex flex-col justify-center items-center gap-5">
             <div className="self-stretch flex-1 inline-flex justify-start items-start gap-5">
@@ -1266,6 +462,9 @@ function Produtos() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="bg-green-900 -mx-42 ">
+        <Footer />
       </div>
     </div>
   );

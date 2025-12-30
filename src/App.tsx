@@ -1,19 +1,23 @@
-import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import ScrollToTop from "./components/ScrollToTop";
 import Comprar from "./pages/Comprar";
 import Home from "./pages/Home/Home";
 import Produtos from "./pages/Produtos";
+import NotFound from "./pages/NotFound";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
+  const basename = (import.meta.env.BASE_URL || "/").replace(/\/$/, "");
+
   return (
-    <BrowserRouter basename="/Projeto-CETAM">
+    <BrowserRouter basename={basename}>
       <ScrollToTop />
 
       <div className="min-h-screen flex flex-col">
-        <div className="flex-grow">
+        <div className="grow">
           <Routes>
+
+            {/* HOME */}
             <Route
               path="/"
               element={
@@ -25,8 +29,9 @@ function App() {
               }
             />
 
+            {/* COMPRAR COM ID */}
             <Route
-              path="/comprar"
+              path="/comprar/:id"
               element={
                 <>
                   <Header />
@@ -34,10 +39,20 @@ function App() {
                 </>
               }
             />
+
+            {/* 404 - NOT FOUND */}
+            <Route
+              path="*"
+              element={
+                <>
+                  <Header />
+                  <NotFound />
+                </>
+              }
+            />
+
           </Routes>
         </div>
-
-        <Footer />
       </div>
     </BrowserRouter>
   );

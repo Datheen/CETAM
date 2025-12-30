@@ -8,10 +8,7 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-}
-
-body #comprar #footer {
-  opacity: 0;
+  overflow-x: hidden;
 }
 
 #mobile {
@@ -23,69 +20,55 @@ body {
   padding: 0;
 }
 
-#footer {
-  z-index: 1000;
+
+
+
+@media (max-width: 1600px) {
+ 
+  body {
+    scale: 0.82;
+    transform-origin:top center ;
+  }
+
+  #MAIS-VENDIDOS {
+    scale: 1.05;
+    height: 6900px;
+    padding-top: 700px;
+    margin-top: 220px;
+    
+  }
+
+  #bug {
+    display: block;
+    margin-top: 0px;
+  }
+#SEGUNDA-PARTE {
+  margin-top: 500px;
+  
 }
 
-#loja {
-  height: 7000px;
+
+
+#VOLTAR {
+  margin-left: -36px;
+}
+
+
 }
 
 @media (max-width: 1366px) {
-  #top-header {
-    transform: scale(0.8);
-    transform-origin: top center;
-  }
 
-  
-
-  #footer {
-    margin-top: 71%;
-  }
-
-  #inicio {
-    transform: scale(0.8);
-    transform-origin: top center;
-  }
-
-  
-  
-  
-  
-  #loja {
-    transform: scale(0.8);
-    transform-origin: top center;
-    right: 70px;
-  }
-
-  #BACKGROUD {
-    opacity: 0;
-  }
-
-  #alternative {
-    opacity: 1;
-  }
-
-  #comprar {
-    transform: scale(0.8);
-    transform-origin: top left;
-  }
-
-  #painel-buy {
-    position: absolute;
-    left: 780px;
-    scale: 0.9;
-    top: 0px;
-  }
-
-  #produto {
-    margin-left: 25px;
-  }
-
-  #delivery {
-    margin-left: -135px;
-  }
+#PAINEL-CATEGORIAS {
+gap: 70px;
 }
+
+#VOLTAR {
+  margin-left: -106px;
+}
+
+}
+
+
 
 @media (max-width: 768px) {
   body {

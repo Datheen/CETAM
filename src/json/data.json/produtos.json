@@ -1,0 +1,258 @@
+[
+  {
+    "id": 1,
+    "name": "Cuprea",
+    "price": "R$ 79,99",
+    "image": "/img/Produtos/Categorias/Alocacias/Alocasia - Cuprea.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "A Alocasia Cuprea possui folhas metálicas com brilho intenso, ideal para quem busca uma planta exótica e sofisticada para ambientes internos bem iluminados."
+  },
+  {
+    "id": 2,
+    "name": "Black Velvet",
+    "price": "R$ 59,99",
+    "image": "/img/Produtos/Categorias/Alocacias/Alocasia - Black Velvet.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "Compacta e elegante, a Black Velvet se destaca pelas folhas aveludadas e veias prateadas, perfeita para decoração moderna."
+  },
+  {
+    "id": 3,
+    "name": "Dragon Scale",
+    "price": "R$ 79,99",
+    "image": "/img/Produtos/Categorias/Alocacias/Alocasia - Dragon Scale.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "Com folhas texturizadas que lembram escamas, a Dragon Scale é uma planta ornamental rara e muito valorizada."
+  },
+  {
+    "id": 4,
+    "name": "Zebrina",
+    "price": "R$ 49,99",
+    "image": "/img/Produtos/Categorias/Alocacias/Alocasia - Zebrina.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "Conhecida por seus caules listrados, a Alocasia Zebrina traz personalidade e charme para qualquer ambiente."
+  },
+  {
+    "id": 5,
+    "name": "Polly",
+    "price": "R$ 59,99",
+    "image": "/img/Produtos/Categorias/Alocacias/Alocasia - Polly.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "A Alocasia Polly é famosa por suas folhas recortadas e contraste marcante, sendo uma das mais populares da categoria."
+  },
+  {
+    "id": 6,
+    "name": "Odora",
+    "price": "R$ 29,99",
+    "image": "/img/Produtos/Categorias/Alocacias/Alocasia - Odora.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "De crescimento vigoroso, a Alocasia Odora é ideal para ambientes amplos e traz sensação tropical ao espaço."
+  },
+  {
+    "id": 7,
+    "name": "Clypeolata",
+    "price": "R$ 49,99",
+    "image": "/img/Produtos/Categorias/Alocacias/Alocasia - Clypeolata.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "Com folhas arredondadas e textura única, a Clypeolata é perfeita para colecionadores de plantas ornamentais."
+  },
+  {
+    "id": 8,
+    "name": "Sinuata",
+    "price": "R$ 49,99",
+    "image": "/img/Produtos/Categorias/Alocacias/Alocasia - Sinuata.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "A Sinuata chama atenção pelas folhas espessas e onduladas, sendo resistente e fácil de cuidar."
+  },
+  {
+    "id": 9,
+    "name": "Aechmea chantinii",
+    "price": "R$ 79,99",
+    "image": "/img/Produtos/Categorias/Bromelias/Bromelias - Aechmea chantinii.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "Bromélia ornamental com folhas listradas e visual tropical, ideal para áreas internas bem iluminadas."
+  },
+  {
+    "id": 10,
+    "name": "Aechmea",
+    "price": "R$ 79,99",
+    "image": "/img/Produtos/Categorias/Bromelias/Bromelias - Aechmea.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "A Aechmea é uma bromélia resistente e decorativa, perfeita para quem busca beleza com baixa manutenção."
+  },
+  {
+    "id": 11,
+    "name": "Guzmania",
+    "price": "R$ 39,99",
+    "image": "/img/Produtos/Categorias/Bromelias/Bromelias - Guzmania.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "Com flores coloridas e duráveis, a Guzmania traz alegria e vida para qualquer ambiente."
+  },
+  {
+    "id": 12,
+    "name": "Tillandsia",
+    "price": "R$ 29,99",
+    "image": "/img/Produtos/Categorias/Bromelias/Bromelias - Tillandsia.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "Conhecida como planta aérea, a Tillandsia é moderna, versátil e não necessita de solo para viver."
+  },
+  {
+    "id": 13,
+    "name": "Alpino",
+    "price": "R$ 39,99",
+    "image": "/img/Produtos/Categorias/Orquideas/Orquidea - Alpino.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "Orquídea elegante e delicada, ideal para presentear ou decorar ambientes sofisticados."
+  },
+  {
+    "id": 14,
+    "name": "Blanca Phalaenopsis",
+    "price": "R$ 49,99",
+    "image": "/img/Produtos/Categorias/Orquideas/Orquidea - Blanca Phalaenopsis.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "Clássica e refinada, a Phalaenopsis branca simboliza pureza e elegância."
+  },
+  {
+    "id": 15,
+    "name": "Phalaenopsis",
+    "price": "R$ 39,99",
+    "image": "/img/Produtos/Categorias/Orquideas/Orquidea - Phalaenopsis.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "Uma das orquídeas mais populares, conhecida por sua longa floração e fácil cultivo."
+  },
+  {
+    "id": 16,
+    "name": "Cascatas",
+    "price": "R$ 49,99",
+    "image": "/img/Produtos/Categorias/Orquideas/Orquidea - Cascatas.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "Orquídea com flores em cascata, criando um efeito visual exuberante."
+  },
+  {
+    "id": 17,
+    "name": "Chomthong",
+    "price": "R$ 59,99",
+    "image": "/img/Produtos/Categorias/Orquideas/Orquideas - Chomthong.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "Exótica e marcante, a Chomthong é ideal para quem aprecia plantas diferenciadas."
+  },
+  {
+    "id": 18,
+    "name": "Looge Tone Red",
+    "price": "R$ 49,99",
+    "image": "/img/Produtos/Categorias/Orquideas/Orquideas - Looge Tone Red.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "Com tonalidade avermelhada intensa, essa orquídea se destaca em qualquer decoração."
+  },
+  {
+    "id": 19,
+    "name": "Phalaenopsis Manchada",
+    "price": "R$ 49,99",
+    "image": "/img/Produtos/Categorias/Orquideas/Orquideas - Phalaenopsis Manchada.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "Suas pétalas manchadas trazem um visual único e sofisticado."
+  },
+  {
+    "id": 20,
+    "name": "Sophoronitis",
+    "price": "R$ 49,99",
+    "image": "/img/Produtos/Categorias/Orquideas/Orquideas - Sophoronitis.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "Orquídea compacta e vibrante, ideal para colecionadores."
+  },
+  {
+    "id": 21,
+    "name": "Americana",
+    "price": "R$ 49,99",
+    "image": "/img/Produtos/Categorias/Samambaias/Samambaias - Americana.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "Samambaia clássica, perfeita para trazer frescor e verde ao ambiente."
+  },
+  {
+    "id": 22,
+    "name": "De Sol",
+    "price": "R$ 39,99",
+    "image": "/img/Produtos/Categorias/Samambaias/Samambaias - De Sol.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "Resistente ao sol direto, ideal para varandas e áreas externas."
+  },
+  {
+    "id": 23,
+    "name": "Gleichenia",
+    "price": "R$ 99,99",
+    "image": "/img/Produtos/Categorias/Samambaias/Samambaias - Gleichenia.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "Samambaia rara e exuberante, com folhagem diferenciada."
+  },
+  {
+    "id": 24,
+    "name": "Prata",
+    "price": "R$ 69,99",
+    "image": "/img/Produtos/Categorias/Samambaias/Samambaias - Prata.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "Folhas com tom prateado que dão um toque moderno à decoração."
+  },
+  {
+    "id": 25,
+    "name": "Gasteria Maculata",
+    "price": "R$ 59,99",
+    "image": "/img/Produtos/Categorias/Suculentas/Suculenta - Gasteria Maculata.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "Suculenta resistente, ideal para iniciantes e ambientes internos."
+  },
+  {
+    "id": 26,
+    "name": "Aeonium",
+    "price": "R$ 69,99",
+    "image": "/img/Produtos/Categorias/Suculentas/Suculentas - Aeonium.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "Suculenta ornamental com formato de roseta, muito decorativa."
+  },
+  {
+    "id": 27,
+    "name": "Echeveria Agavoides",
+    "price": "R$ 79,99",
+    "image": "/img/Produtos/Categorias/Suculentas/Suculentas - Echeveria Agavoides.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "Conhecida por suas folhas pontiagudas e coloração vibrante."
+  },
+  {
+    "id": 28,
+    "name": "Echeveria",
+    "price": "R$ 69,99",
+    "image": "/img/Produtos/Categorias/Suculentas/Suculentas - Echeveria.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "Suculenta clássica, fácil de cuidar e perfeita para decoração."
+  },
+  {
+    "id": 29,
+    "name": "Elatior vermelha",
+    "price": "R$ 59,99",
+    "image": "/img/Produtos/Categorias/Begonias/Begônia - Elatior vermelha.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "Begônia de flores vermelhas intensas, ideal para ambientes internos."
+  },
+  {
+    "id": 30,
+    "name": "Elatior branca",
+    "price": "R$ 49,99",
+    "image": "/img/Produtos/Categorias/Begonias/Begônia - Elatior branca.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "Elegante e delicada, a begônia branca combina com qualquer decoração."
+  },
+  {
+    "id": 31,
+    "name": "Elatior laranja",
+    "price": "R$ 69,99",
+    "image": "/img/Produtos/Categorias/Begonias/Begônia - Elatior laranja.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "Com flores vibrantes, traz energia e cor ao ambiente."
+  },
+  {
+    "id": 32,
+    "name": "Elatior rosa claro",
+    "price": "R$ 69,99",
+    "image": "/img/Produtos/Categorias/Begonias/Begônia - Elatior rosa claro.webp",
+    "rating": "/img/Produtos/Comprar/Rating.png",
+    "description": "Suave e romântica, perfeita para ambientes aconchegantes."
+  }
+]
