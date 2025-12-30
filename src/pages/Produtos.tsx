@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import logoWAlt from "../../public/img/logo-w -alt.png";
 import bannerImg from "../../public/img/Produtos/banner.webp";
 import cabara from "../../public/img/Produtos/Trending/caba.webp";
-import tironhao from "../../public/img/Produtos/Trending/caba.webp";
+import tironhao from "../../public/img/Produtos/Trending/tiro.webp";
 import rosaDeserto from "../../public/img/Produtos/Trending/rosa.webp";
 
 function Produtos() {
