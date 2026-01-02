@@ -42,6 +42,7 @@ function Produtos() {
             className="relative right-[436px] w-[200px]"
             src={logoWAlt}
             alt=""
+            loading="lazy"
           />
           <div className="mr-83 mt-19 bg-white/70 h-15 w-[300px] rounded-full text-zinc-800/60 font-medium  text-[13pt] text-center flex items-center justify-center">
             <p>Oque você está proucurando?</p>
@@ -56,6 +57,7 @@ function Produtos() {
             className="z-10 h-135 relative bottom-[141px] right-[345px]"
             src={bannerImg}
             alt=""
+            loading="lazy"
           />
           <div className="w-28 h-36 relative right-[400px] top-10 rotate-[18.13deg]  outline-[5px] outline-offset-[-2.50px] outline-green-800 shrink-0" />
         </div>
@@ -71,7 +73,7 @@ function Produtos() {
         behavior:"smooth",
         block:"start"
        })}} className="flex flex-col w-[170px]">
-        <img className="w-[170px] h-[170px] rounded-full hover:scale-110 transition-all cursor-pointer" src={`${import.meta.env.BASE_URL}img/Produtos/Ball/ball1.jpeg`} />
+        <img className="w-[170px] h-[170px] rounded-full hover:scale-110 transition-all cursor-pointer" src={`${import.meta.env.BASE_URL}img/Produtos/Ball/ball1.jpeg`} loading="lazy" />
         <h2 className="flex justify-center mt-2 font-semibold text-[14pt] text-green-950">ORQUIDEAS</h2>
        </div>
 
@@ -80,7 +82,7 @@ function Produtos() {
           behavior:"smooth",
           block:"start"
         })}} className="flex flex-col w-[170px]">
-        <img className="w-[170px] h-[170px] rounded-full hover:scale-110 transition-all cursor-pointer" src={`${import.meta.env.BASE_URL}img/Produtos/Ball/ball2.jpg`} />
+        <img className="w-[170px] h-[170px] rounded-full hover:scale-110 transition-all cursor-pointer" src={`${import.meta.env.BASE_URL}img/Produtos/Ball/ball2.jpg`} loading="lazy" />
         <h2 className="flex justify-center mt-2 font-semibold text-[14pt] text-green-950">SAMAMBAIAS</h2>
        </div>
 
@@ -90,7 +92,7 @@ function Produtos() {
           behavior:"smooth",
           block:"start"
         })}} className="flex flex-col w-[170px]">
-        <img className="w-[170px] h-[170px] rounded-full hover:scale-110 transition-all cursor-pointer" src={`${import.meta.env.BASE_URL}img/Produtos/Ball/ball3.webp`} />
+        <img className="w-[170px] h-[170px] rounded-full hover:scale-110 transition-all cursor-pointer" src={`${import.meta.env.BASE_URL}img/Produtos/Ball/ball3.webp`} loading="lazy" />
         <h2 className="flex justify-center mt-2 font-semibold text-[14pt] text-green-950">BROMÉLIAS</h2>
        </div>
 
@@ -100,7 +102,7 @@ function Produtos() {
           behavior:"smooth",
           block:"start"
         })}} className="flex flex-col w-[170px]">
-        <img className="w-[170px] h-[170px] rounded-full hover:scale-110 transition-all cursor-pointer" src={`${import.meta.env.BASE_URL}img/Produtos/Ball/ball4.jpg`} />
+        <img className="w-[170px] h-[170px] rounded-full hover:scale-110 transition-all cursor-pointer" src={`${import.meta.env.BASE_URL}img/Produtos/Ball/ball4.jpg`} loading="lazy" />
         <h2 className="flex justify-center mt-2 font-semibold text-[14pt] text-green-950">SUCULENTAS</h2>
        </div>
 
@@ -109,7 +111,7 @@ function Produtos() {
           behavior:"smooth",
           block:"start"
         })}} className="flex flex-col w-[170px]">
-        <img className="w-[170px] h-[170px] rounded-full hover:scale-110 transition-all cursor-pointer" src={`${import.meta.env.BASE_URL}img/Produtos/Ball/ball5.jpg`} />
+        <img className="w-[170px] h-[170px] rounded-full hover:scale-110 transition-all cursor-pointer" src={`${import.meta.env.BASE_URL}img/Produtos/Ball/ball5.jpg`} loading="lazy" />
         <h2 className="flex justify-center mt-2 font-semibold text-[14pt] text-green-950">BEGÔNIAS</h2>
        </div>
 
@@ -117,7 +119,7 @@ function Produtos() {
           behavior:"smooth",
           block:"start"
         })}} className="flex flex-col w-[170px]">
-        <img className="w-[170px] h-[170px] rounded-full hover:scale-110 transition-all cursor-pointer" src={`${import.meta.env.BASE_URL}img/Produtos/Ball/ball6.jpg`} />
+        <img className="w-[170px] h-[170px] rounded-full hover:scale-110 transition-all cursor-pointer" src={`${import.meta.env.BASE_URL}img/Produtos/Ball/ball6.jpg`} loading="lazy" />
         <h2 className="flex justify-center mt-2 font-semibold text-[14pt] text-green-950">ALOCASIAS</h2>
        </div>
 
@@ -148,6 +150,7 @@ function Produtos() {
               <img
                 className="mt-3 pl-4 pr-4 pb-4 object-cover"
                 src={cabara}
+                loading="lazy"
               />
             </div>
             <div
@@ -169,6 +172,7 @@ function Produtos() {
               <img
                 className="mt-3 pl-4 pr-4 pb-4 object-cover"
                 src={tironhao}
+                loading="lazy"
               />
             </div>
             <div
@@ -187,6 +191,7 @@ function Produtos() {
               <img
                 className="mt-3 pl-4 pr-4 pb-4 object-cover"
                 src={rosaDeserto}
+                loading="lazy"
               />
             </div>
             <div
@@ -360,6 +365,7 @@ function Produtos() {
           <img
             className="flex-1 self-stretch rounded-2xl shadow-[0px_8px_23px_0px_rgba(80,107,82,0.13)] border border-green-700"
             src={`${import.meta.env.BASE_URL}img/Galeria/Section.webp`}
+            loading="lazy"
           />
         </div>
         <div
@@ -378,6 +384,7 @@ function Produtos() {
                   id="japa"
                   className="absolute inset-0 w-full h-full object-cover"
                   src={`${import.meta.env.BASE_URL}img/Galeria/1.webp`}
+                  loading="lazy"
                 />
                 <div className="relative z-10 p-4 flex justify-start items-end">
                   <div className="flex-1 justify-start text-white text-base font-normal font-['Poppins'] opacity-0">
@@ -391,6 +398,7 @@ function Produtos() {
                   id="japa"
                   className="absolute inset-0 w-full h-full object-cover"
                   src={`${import.meta.env.BASE_URL}img/Galeria/2.webp`}
+                  loading="lazy"
                 />
                 <div className="relative z-10 p-4 flex justify-start items-end">
                   <div className="flex-1 justify-start text-white text-base font-normal font-['Poppins'] opacity-0">
@@ -404,6 +412,7 @@ function Produtos() {
                   id="japa"
                   className="absolute inset-0 w-full h-full object-cover"
                   src={`${import.meta.env.BASE_URL}img/Galeria/3.webp`}
+                  loading="lazy"
                 />
                 <div className="relative z-10 p-4 flex justify-start items-end">
                   <div className="flex-1 justify-start text-white text-base font-normal font-['Poppins'] opacity-0">
@@ -417,6 +426,7 @@ function Produtos() {
                   id="japa"
                   className="absolute inset-0 w-full h-full object-cover"
                   src={`${import.meta.env.BASE_URL}img/Galeria/4.webp`}
+                  loading="lazy"
                 />
                 <div className="relative z-10 p-4 flex justify-start items-end">
                   <div className="flex-1 justify-start text-white text-base font-normal font-['Poppins'] opacity-0">
@@ -431,6 +441,7 @@ function Produtos() {
                   id="japa"
                   className="absolute inset-0 w-full h-full object-cover"
                   src={`${import.meta.env.BASE_URL}img/Galeria/5.webp`}
+                  loading="lazy"
                 />
                 <div className="relative z-10 p-4 flex justify-start items-end">
                   <div className="flex-1 justify-start text-white text-base font-normal font-['Poppins'] opacity-0">
@@ -444,6 +455,7 @@ function Produtos() {
                   id="japa"
                   className="absolute inset-0 w-full h-full object-cover"
                   src={`${import.meta.env.BASE_URL}img/Galeria/6.webp`}
+                  loading="lazy"
                 />
                 <div className="relative z-10 p-4 flex justify-start items-end">
                   <div className="flex-1 justify-start text-white text-base font-normal font-['Poppins'] opacity-0">
@@ -457,6 +469,7 @@ function Produtos() {
                   id="japa"
                   className="absolute inset-0 w-full h-full object-cover"
                   src={`${import.meta.env.BASE_URL}img/Galeria/7.webp`}
+                  loading="lazy"
                 />
                 <div className="relative z-10 p-4 flex justify-start items-end">
                   <div className="flex-1 justify-start text-white text-base font-normal font-['Poppins'] opacity-0">

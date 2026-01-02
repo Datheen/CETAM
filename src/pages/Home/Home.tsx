@@ -75,15 +75,16 @@ function Home() {
               </div>
             </div>
           </div>
-          <img className={styles.heroImagem} src={planta} />
+          <img className={styles.heroImagem} src={planta} loading="lazy" />
           <img
             className={styles.vtImagem}
             src={`${import.meta.env.BASE_URL}img/vt.webp`}
             alt="Vitória Régia"
+            loading="lazy"
           />
         </div>
         <div className={styles.padraoContainer}>
-          <img className={styles.padraoImagem} src={`${import.meta.env.BASE_URL}img/pattern.webp`} />
+          <img className={styles.padraoImagem} src={`${import.meta.env.BASE_URL}img/pattern.webp`} loading="lazy" />
         </div>
         <div id="big-card" className={styles.cardGrande}>
           <div>
@@ -99,7 +100,7 @@ function Home() {
             </h1>
             <p className={styles.texto100}>Clientes satisfeitos</p>
 
-            <img className={styles.cardImagem} src={retangule} />
+            <img className={styles.cardImagem} src={retangule} loading="lazy" />
           </div>
 
           <div className={styles.secaoFlutuante}>

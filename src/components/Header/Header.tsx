@@ -34,6 +34,7 @@ function Header() {
             src={`${import.meta.env.BASE_URL}img/logo-w.webp`}
             alt="Logotipo da Empresa"
             className={styles.logo}
+            loading="lazy"
           />
         </span>
 
@@ -77,6 +78,7 @@ function Header() {
           className="w-6 mb-[]"
           src={`${import.meta.env.BASE_URL}img/whatsapp.webp`}
           alt="Whatsapp Icon"
+          loading="lazy"
         />
       </div>
     </div>
